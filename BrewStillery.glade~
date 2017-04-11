@@ -460,7 +460,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="realABVButton">
+              <object class="GtkButton">
                 <property name="label" translatable="yes">Calculate Real ABV</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
