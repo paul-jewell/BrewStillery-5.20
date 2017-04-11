@@ -9,6 +9,15 @@ def increaseABV
   button.signal_connect("clicked") {
     onSwitchActivated
   }
+  $increaseABVBrixInput.signal_connect("activate") {
+    onSwitchActivated
+  }
+  $increaseABVABVInput.signal_connect("activate") {
+    onSwitchActivated
+  }
+  $increaseABVVolumeInput.signal_connect("activate") {
+    onSwitchActivated
+  }
 end
 
 def onSwitchActivated
