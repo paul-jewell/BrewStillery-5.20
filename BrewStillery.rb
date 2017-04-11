@@ -1,8 +1,7 @@
 require 'gtk3'
 require_relative 'guestimateABV'
-# require_relative 'realABV'
 require_relative 'increaseABV'
-# require_relative 'increaseABV'
+require_relative 'realABV'
 
 gladeFile = 'BrewStillery.glade'
 
@@ -10,15 +9,22 @@ gladeFile = 'BrewStillery.glade'
 $builder = Gtk::Builder.new
 $builder.add_from_file(gladeFile)
 
+# appID = Gtk::Application.new("uk.co.monkeylog.BrewStillery", :flags_none)
+# appID.signal_connect "activate" do |application|
+#   mainWindow = Gtk::ApplicationWindow.new(application)
+# end
+# strip the mainWindow line out of the bullshit
 
-# Connect signal handlers to the constructed widgets
 mainWindow = $builder.get_object("mainWindow")
 mainWindow.signal_connect("destroy") { Gtk.main_quit }
+# Connect signal handlers to the constructed widgets
 
 guestiMaths
 # call method from guestimateABV.rb
 increaseABV
 # call method from increaseABV.rb
+realABV
+# call method from realABV.rb
 
 
 mainWindow = $builder.get_object('mainWindow')

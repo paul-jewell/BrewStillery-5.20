@@ -85,7 +85,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="margin_top">17</property>
-                <property name="margin_bottom">7</property>
+                <property name="margin_bottom">3</property>
                 <property name="label" translatable="yes">Sugar Needed To Increase ABV</property>
                 <attributes>
                   <attribute name="font-desc" value="Roboto Bold 13"/>
@@ -460,7 +460,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton">
+              <object class="GtkButton" id="realABVButton">
                 <property name="label" translatable="yes">Calculate Real ABV</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -486,6 +486,7 @@
                     <property name="can_focus">True</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
+                    <property name="xalign">0.5</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -499,6 +500,7 @@
                     <property name="can_focus">True</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
+                    <property name="xalign">0.5</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -535,7 +537,7 @@
                   <object class="GtkLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin_right">17</property>
+                    <property name="margin_right">21</property>
                     <property name="margin_top">3</property>
                     <property name="margin_bottom">17</property>
                     <property name="label" translatable="yes">Real ABV</property>

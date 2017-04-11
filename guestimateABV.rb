@@ -4,14 +4,14 @@ def guestiMaths
   button = $builder.get_object("guestimatorButton")
   # assigning the widget "guestimatorButton" to the variable 'button'
   button.signal_connect("clicked") {
-    calculations
+    guestimateCalculations
   }
   $guestimatorInput.signal_connect("activate") {
-    calculations
+    guestimateCalculations
   }
 end
 
-def calculations
+def guestimateCalculations
 # when the button is clicked or enter/return is pressed, do the following:
   startingBrix = $guestimatorInput.text.to_f
   originalGravity = (startingBrix / (258.6 - ((startingBrix / 258.2) * 227.1))) + 1
