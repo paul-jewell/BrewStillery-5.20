@@ -2,6 +2,7 @@ require 'gtk3'
 require_relative 'guestimateABV'
 require_relative 'increaseABV'
 require_relative 'realABV'
+require_relative 'waterSparge'
 
 gladeFile = 'BrewStillery.glade'
 
@@ -19,12 +20,16 @@ mainWindow = $builder.get_object("mainWindow")
 mainWindow.signal_connect("destroy") { Gtk.main_quit }
 # Connect signal handlers to the constructed widgets
 
-guestiMaths
+# @guestimateABV.call 'guestimatorInputBeer', 'guestimatorButtonBeer', 'guestimatorOutputBeer'
+
+guestimateABV
 # call method from guestimateABV.rb
 increaseABV
 # call method from increaseABV.rb
 realABV
 # call method from realABV.rb
+# waterSparge
+# call method from waterSparge.rb
 
 
 mainWindow = $builder.get_object('mainWindow')
