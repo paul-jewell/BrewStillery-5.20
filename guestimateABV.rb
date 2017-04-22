@@ -1,51 +1,62 @@
 def guestimateABV
-  buttonBeer = $builder.get_object("guestimatorButtonBeer")
-  buttonBeer.signal_connect("clicked") {
+  def beerGuestimatorSettings
     @guestimatorInput = $builder.get_object("guestimatorInputBeer")
     @guestimatorOutput = "guestimatorOutputBeer"
     guestiMaths
-  }
-  buttonWine = $builder.get_object("guestimatorButtonWine")
-  buttonWine.signal_connect("clicked") {
-    @guestimatorInput = $builder.get_object("guestimatorInputWine")
-    @guestimatorOutput = "guestimatorOutputWine"
-    guestiMaths
-  }
-  buttonChampagne = $builder.get_object("guestimatorButtonChampagne")
-  buttonChampagne.signal_connect("clicked") {
-    @guestimatorInput = $builder.get_object("guestimatorInputChampagne")
-    @guestimatorOutput = "guestimatorOutputChampagne"
-    guestiMaths
-  }
-  buttonSpirits = $builder.get_object("guestimatorButtonSpirits")
-  buttonSpirits.signal_connect("clicked") {
-    @guestimatorInput = $builder.get_object("guestimatorInputSpirits")
-    @guestimatorOutput = "guestimatorOutputSpirits"
-    guestiMaths
+  end
+
+  buttonBeer = $builder.get_object("guestimatorButtonBeer")
+  buttonBeer.signal_connect("clicked") {
+    beerGuestimatorSettings
   }
   guestimatorInputBeer = $builder.get_object("guestimatorInputBeer")
   guestimatorInputBeer.signal_connect("activate") {
-    @guestimatorInput = $builder.get_object("guestimatorInputBeer")
-    @guestimatorOutput = "guestimatorOutputBeer"
-    guestiMaths
+    beerGuestimatorSettings
   }
-  guestimatorInputWine = $builder.get_object("guestimatorInputWine")
-  guestimatorInputWine.signal_connect("activate") {
+
+  def wineGuestimatorSettings
     @guestimatorInput = $builder.get_object("guestimatorInputWine")
     @guestimatorOutput = "guestimatorOutputWine"
     guestiMaths
+  end
+
+  buttonWine = $builder.get_object("guestimatorButtonWine")
+  buttonWine.signal_connect("clicked") {
+    wineGuestimatorSettings
   }
-  guestimatorInputChampagne = $builder.get_object("guestimatorInputChampagne")
-  guestimatorInputChampagne.signal_connect("activate") {
+  guestimatorInputWine = $builder.get_object("guestimatorInputWine")
+  guestimatorInputWine.signal_connect("activate") {
+    wineGuestimatorSettings
+  }
+
+  def champagneGuestimatorSettings
     @guestimatorInput = $builder.get_object("guestimatorInputChampagne")
     @guestimatorOutput = "guestimatorOutputChampagne"
     guestiMaths
+  end
+
+  buttonChampagne = $builder.get_object("guestimatorButtonChampagne")
+  buttonChampagne.signal_connect("clicked") {
+    champagneGuestimatorSettings
   }
-  guestimatorInputSpirits = $builder.get_object("guestimatorInputSpirits")
-  guestimatorInputSpirits.signal_connect("activate") {
+  guestimatorInputChampagne = $builder.get_object("guestimatorInputChampagne")
+  guestimatorInputChampagne.signal_connect("activate") {
+    champagneGuestimatorSettings
+  }
+
+  def spiritsGuestimatorSettings
     @guestimatorInput = $builder.get_object("guestimatorInputSpirits")
     @guestimatorOutput = "guestimatorOutputSpirits"
     guestiMaths
+  end
+  
+  buttonSpirits = $builder.get_object("guestimatorButtonSpirits")
+  buttonSpirits.signal_connect("clicked") {
+    spiritsGuestimatorSettings
+  }
+  guestimatorInputSpirits = $builder.get_object("guestimatorInputSpirits")
+  guestimatorInputSpirits.signal_connect("activate") {
+    spiritsGuestimatorSettings
   }
 end
 

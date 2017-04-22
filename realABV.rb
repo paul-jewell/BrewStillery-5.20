@@ -1,5 +1,5 @@
 def realABV
-  def beerSettings
+  def beerRealSettings
     @realABVStartingBrixInput = $builder.get_object("realABVStartingBrixInputBeer")
     @realABVFinalBrixInput = $builder.get_object("realABVFinalBrixInputBeer")
     @realABVFinalAttenuation = $builder.get_object("realABVFinalAttenuationBeer")
@@ -9,18 +9,18 @@ def realABV
 
   buttonBeer = $builder.get_object("realABVButtonBeer")
   buttonBeer.signal_connect("clicked") {
-    beerSettings
+    beerRealSettings
   }
   realABVStartingBrixInputBeer = $builder.get_object("realABVStartingBrixInputBeer")
   realABVStartingBrixInputBeer.signal_connect("activate") {
-    beerSettings
+    beerRealSettings
   }
   realABVFinalBrixInputBeer = $builder.get_object("realABVFinalBrixInputBeer")
   realABVFinalBrixInputBeer.signal_connect("activate") {
-    beerSettings
+    beerRealSettings
   }
 
-  def wineSettings
+  def wineRealSettings
     @realABVStartingBrixInput = $builder.get_object("realABVStartingBrixInputWine")
     @realABVFinalBrixInput = $builder.get_object("realABVFinalBrixInputWine")
     @realABVFinalAttenuation = $builder.get_object("realABVFinalAttenuationWine")
@@ -30,18 +30,18 @@ def realABV
 
   buttonWine = $builder.get_object("realABVButtonWine")
   buttonWine.signal_connect("clicked") {
-    wineSettings
+    wineRealSettings
   }
   realABVStartingBrixInputWine = $builder.get_object("realABVStartingBrixInputWine")
   realABVStartingBrixInputWine.signal_connect("activate") {
-    wineSettings
+    wineRealSettings
   }
   realABVFinalBrixInputWine = $builder.get_object("realABVFinalBrixInputWine")
   realABVFinalBrixInputWine.signal_connect("activate") {
-    wineSettings
+    wineRealSettings
   }
 
-  def champagneSettings
+  def champagneRealSettings
     @realABVStartingBrixInput = $builder.get_object("realABVStartingBrixInputChampagne")
     @realABVFinalBrixInput = $builder.get_object("realABVFinalBrixInputChampagne")
     @realABVFinalAttenuation = $builder.get_object("realABVFinalAttenuationChampagne")
@@ -51,18 +51,18 @@ def realABV
 
   buttonChampagne = $builder.get_object("realABVButtonChampagne")
   buttonChampagne.signal_connect("clicked") {
-    champagneSettings
+    champagneRealSettings
   }
   realABVStartingBrixInputChampagne = $builder.get_object("realABVStartingBrixInputChampagne")
   realABVStartingBrixInputChampagne.signal_connect("activate") {
-    champagneSettings
+    champagneRealSettings
   }
   realABVFinalBrixInputChampagne = $builder.get_object("realABVFinalBrixInputChampagne")
   realABVFinalBrixInputChampagne.signal_connect("activate") {
-    champagneSettings
+    champagneRealSettings
   }
 
-  def spiritsSettings
+  def spiritsRealSettings
     @realABVStartingBrixInput = $builder.get_object("realABVStartingBrixInputSpirits")
     @realABVFinalBrixInput = $builder.get_object("realABVFinalBrixInputSpirits")
     @realABVFinalAttenuation = $builder.get_object("realABVFinalAttenuationSpirits")
@@ -72,15 +72,15 @@ def realABV
 
   buttonSpirits = $builder.get_object("realABVButtonSpirits")
   buttonSpirits.signal_connect("clicked") {
-    spiritsSettings
+    spiritsRealSettings
   }
   realABVStartingBrixInputSpirits = $builder.get_object("realABVStartingBrixInputSpirits")
   realABVStartingBrixInputSpirits.signal_connect("activate") {
-    spiritsSettings
+    spiritsRealSettings
   }
   realABVFinalBrixInputSpirits = $builder.get_object("realABVFinalBrixInputSpirits")
   realABVFinalBrixInputSpirits.signal_connect("activate") {
-    spiritsSettings
+    spiritsRealSettings
   }
 end
 

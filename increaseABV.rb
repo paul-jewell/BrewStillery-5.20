@@ -1,5 +1,5 @@
 def increaseABV
-  def beerSettings
+  def beerIncreaseSettings
     @increaseABVBrixInput = $builder.get_object("increaseABVBrixInputBeer")
     @increaseABVABVInput = $builder.get_object("increaseABVABVInputBeer")
     @increaseABVVolumeInput = $builder.get_object("increaseABVVolumeInputBeer")
@@ -10,24 +10,25 @@ def increaseABV
     @honeyAddOutput = $builder.get_object("honeyAddOutputBeer")
     onSwitchActivatedSugar
   end
+
   buttonBeer = $builder.get_object("increaseABVButtonBeer")
   buttonBeer.signal_connect("clicked") {
-    beerSettings
+    beerIncreaseSettings
   }
   increaseABVBrixInputBeer = $builder.get_object("increaseABVBrixInputBeer")
   increaseABVBrixInputBeer.signal_connect("activate") {
-    beerSettings
+    beerIncreaseSettings
   }
   increaseABVABVInputBeer = $builder.get_object("increaseABVABVInputBeer")
   increaseABVABVInputBeer.signal_connect("activate") {
-    beerSettings
+    beerIncreaseSettings
   }
   increaseABVVolumeInputBeer = $builder.get_object("increaseABVVolumeInputBeer")
   increaseABVVolumeInputBeer.signal_connect("activate") {
-    beerSettings
+    beerIncreaseSettings
   }
 
-  def wineSettings
+  def wineIncreaseSettings
     @increaseABVBrixInput = $builder.get_object("increaseABVBrixInputWine")
     @increaseABVABVInput = $builder.get_object("increaseABVABVInputWine")
     @increaseABVVolumeInput = $builder.get_object("increaseABVVolumeInputWine")
@@ -38,24 +39,25 @@ def increaseABV
     @honeyAddOutput = $builder.get_object("honeyAddOutputWine")
     onSwitchActivatedSugar
   end
+
   buttonWine = $builder.get_object("increaseABVButtonWine")
   buttonWine.signal_connect("clicked") {
-    wineSettings
+    wineIncreaseSettings
   }
   increaseABVBrixInputWine = $builder.get_object("increaseABVBrixInputWine")
   increaseABVBrixInputWine.signal_connect("activate") {
-    wineSettings
+    wineIncreaseSettings
   }
   increaseABVABVInputWine = $builder.get_object("increaseABVABVInputWine")
   increaseABVABVInputWine.signal_connect("activate") {
-    wineSettings
+    wineIncreaseSettings
   }
   increaseABVVolumeInputWine = $builder.get_object("increaseABVVolumeInputWine")
   increaseABVVolumeInputWine.signal_connect("activate") {
-    wineSettings
+    wineIncreaseSettings
   }
 
-  def champagneSettings
+  def champagneIncreaseSettings
     @increaseABVBrixInput = $builder.get_object("increaseABVBrixInputChampagne")
     @increaseABVABVInput = $builder.get_object("increaseABVABVInputChampagne")
     @increaseABVVolumeInput = $builder.get_object("increaseABVVolumeInputChampagne")
@@ -66,24 +68,25 @@ def increaseABV
     @honeyAddOutput = $builder.get_object("honeyAddOutputChampagne")
     onSwitchActivatedSugar
   end
+
   buttonChampagne = $builder.get_object("increaseABVButtonChampagne")
   buttonChampagne.signal_connect("clicked") {
-    champagneSettings
+    champagneIncreaseSettings
   }
   increaseABVBrixInputChampagne = $builder.get_object("increaseABVBrixInputChampagne")
   increaseABVBrixInputChampagne.signal_connect("activate") {
-    champagneSettings
+    champagneIncreaseSettings
   }
   increaseABVABVInputChampagne = $builder.get_object("increaseABVABVInputChampagne")
   increaseABVABVInputChampagne.signal_connect("activate") {
-    champagneSettings
+    champagneIncreaseSettings
   }
   increaseABVVolumeInputChampagne = $builder.get_object("increaseABVVolumeInputChampagne")
   increaseABVVolumeInputChampagne.signal_connect("activate") {
-    champagneSettings
+    champagneIncreaseSettings
   }
 
-  def spiritsSettings
+  def spiritsIncreaseSettings
     @increaseABVBrixInput = $builder.get_object("increaseABVBrixInputSpirits")
     @increaseABVABVInput = $builder.get_object("increaseABVABVInputSpirits")
     @increaseABVVolumeInput = $builder.get_object("increaseABVVolumeInputSpirits")
@@ -94,21 +97,22 @@ def increaseABV
     @honeyAddOutput = $builder.get_object("honeyAddOutputSpirits")
     onSwitchActivatedSugar
   end
+  
   buttonSpirits = $builder.get_object("increaseABVButtonSpirits")
   buttonSpirits.signal_connect("clicked") {
-    spiritsSettings
+    spiritsIncreaseSettings
   }
   increaseABVBrixInputSpirits = $builder.get_object("increaseABVBrixInputSpirits")
   increaseABVBrixInputSpirits.signal_connect("activate") {
-    spiritsSettings
+    spiritsIncreaseSettings
   }
   increaseABVABVInputSpirits = $builder.get_object("increaseABVABVInputSpirits")
   increaseABVABVInputSpirits.signal_connect("activate") {
-    spiritsSettings
+    spiritsIncreaseSettings
   }
   increaseABVVolumeInputSpirits = $builder.get_object("increaseABVVolumeInputSpirits")
   increaseABVVolumeInputSpirits.signal_connect("activate") {
-    spiritsSettings
+    spiritsIncreaseSettings
   }
 end
 
