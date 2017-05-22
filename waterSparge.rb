@@ -1,103 +1,88 @@
 def waterSparge
-  button = $builder.get_object("totalWaterButton")
-  # assigning the widget "guestimatorButton" to the variable 'button'
-  $switch = $builder.get_object("imperialOrMetricSwitchWater")
-  $preFermentVolumeInput = $builder.get_object("preFermentVolumeInput")
-  $totalGrainInput = $builder.get_object("totalGrainInput")
-  $boilTimeInput = $builder.get_object("boilTimeInput")
+  def beerWaterSettings
+    @preFermentVolumeInput = $builder.get_object("preFermentVolumeInputBeer")
+    @totalGrainInput = $builder.get_object("totalGrainInputBeer")
+    @boilTimeInput = $builder.get_object("boilTimeInputBeer")
+    @switch = $builder.get_object("imperialOrMetricSwitchWaterBeer")
+    @mashWaterOutput = $builder.get_object("mashWaterOutputBeer")
+    @spargeWaterOutput = $builder.get_object("spargeWaterOutputBeer")
+    @totalWaterOutput = $builder.get_object("totalWaterOutputBeer")
+    onSwitchActivatedWater
+  end
 
-  button.signal_connect("clicked") {
-    onSwitchActivatedWater
+  buttonWaterBeer = $builder.get_object("totalWaterButtonBeer")
+  buttonWaterBeer.signal_connect("clicked") {
+    beerWaterSettings
   }
-  $preFermentVolumeInput.signal_connect("activate") {
-    onSwitchActivatedWater
+  preFermentVolumeInputBeer = $builder.get_object("preFermentVolumeInputBeer")
+  preFermentVolumeInputBeer.signal_connect("activate") {
+    beerWaterSettings
   }
-  $totalGrainInput.signal_connect("activate") {
-    onSwitchActivatedWater
+  totalGrainInputBeer = $builder.get_object("totalGrainInputBeer")
+  totalGrainInputBeer.signal_connect("activate") {
+    beerWaterSettings
   }
-  $boilTimeInput.signal_connect("activate") {
-    onSwitchActivatedWater
+  boilTimeInputBeer = $builder.get_object("boilTimeInputBeer")
+  boilTimeInputBeer.signal_connect("activate") {
+    beerWaterSettings
   }
 end
 
-
 def onSwitchActivatedWater
   # to determine if imperial or metric so to use the correct measurements and calculations
-  if $switch.active? == true
+  if @switch.active? == true
+    @grainAbsorption = 1.25181176
+    # constant value of 1.25181176 litres/kilo
+    # 0.15 gal = 0.5678118 L
+    # 1 lb  = 0.453592 kg
+    @mashThickness = 2.781108353
+    # 1.333 quarts = 1.2614885 L
+    # 1 lb  = 0.453592 kg
+    # 2.781108353 litres/kilo
     waterSpargeMaths
 
-    sugarToAddMetric = (($desiredWortVolume / 3.78541) * 1.5 * $differenceBrix) * 0.0283495
-    honeyToAddMetric = sugarToAddMetric * 1.250001102
-    newSB = $newStartingBrix.round(2).to_s + '°Bx'
-    newABV = $newEstimatedABV.round(2).to_s + '%'
-    sugar = sugarToAddMetric.round(2).to_s + ' kilos'
-    honey = honeyToAddMetric.round(2).to_s + ' kilos'
+    mash = @mashWater.round(2).to_s + ' litres'
+    sparge = @spargeWater.round(2).to_s + ' litres'
+    total = @totalWater.round(2).to_s + ' litres'
 
-  elsif $switch.active? == false
+  elsif @switch.active? == false
+    @grainAbsorption = 0.15
+    # constant value of 0.15 gallons/lb
+    @mashThickness = 1.333
+    # 1.333 quarts/lb
+
     waterSpargeMaths
 
-    sugarToAddImperial = ($desiredWortVolume * 1.5 * $differenceBrix) / 16
-    honeyToAddImperial = sugarToAddImperial * 1.25
-    newSB = $newStartingBrix.round(2).to_s + '°Bx'
-    newABV = $newEstimatedABV.round(2).to_s + '%'
-    sugar = sugarToAddImperial.to_i.to_s + ' lbs ' + (sugarToAddImperial % 1 * 16).to_i.to_s + ' oz'
-    honey = honeyToAddImperial.to_i.to_s + ' lbs ' + (honeyToAddImperial % 1 * 16).to_i.to_s + ' oz'
+    mash = @mashWater.round(2).to_s + ' gallons'
+    sparge = @spargeWater.round(2).to_s + ' gallons'
+    total = @totalWater.round(2).to_s + ' gallons'
   end
 
   # set the output variables to be the text of each widget
   # write the result of the above maths to the text of each widget
 
-  increaseABVNewBrix = $builder.get_object("increaseABVNewBrix")
-  increaseABVNewBrix.set_text(newSB)
-
-  increaseABVEstimatedABV = $builder.get_object("increaseABVEstimatedABV")
-  increaseABVEstimatedABV.set_text(newABV)
-
-  sugarAddOutput = $builder.get_object("sugarAddOutput")
-  sugarAddOutput.set_text(sugar)
-
-  honeyAddOutput = $builder.get_object("honeyAddOutput")
-  honeyAddOutput.set_text(honey)
+  @mashWaterOutput.set_text(mash)
+  @spargeWaterOutput.set_text(sparge)
+  @totalWaterOutput.set_text(total)
 end
 
-
-
 def waterSpargeMaths
-  mashThickness = 1.333
   wortShrinkage = 0.04
   # constant value of 4%
   percentBoiloff = 0.1
   # constant value of 10%
-  grainAbsorptionImperial = 0.15
-  # constant value of 0.15 gallons/lb
-  # grainAbsorptionMetric =
 
-  totalWater = (((preFermentVolume+trubLoss)/(1-(wortShrinkage)))/(1-(boilTime*(percentBoiloff)))) + equipmentLoss + (totalGrain * grainAbsorptionImperial-Or-Metric)
-  mashWater = (totalGrain * mashThickness)/4
-  spargeWater = totalWater - mashWater
+  preFermentVolume = @preFermentVolumeInput.text.to_f
+  totalGrain = @totalGrainInput.text.to_f
+  boilTime = @boilTimeInput.text.to_f / 60
+
+  trubLoss = preFermentVolume * 0.05
+  # 5% is an acceptable norm
+
+  equipmentLoss = preFermentVolume * 0.08
+  # 8% is an acceptable norm
+
+  @totalWater = (((preFermentVolume + trubLoss)/(1 - wortShrinkage))/(1 - (boilTime * percentBoiloff))) + equipmentLoss + (totalGrain * @grainAbsorption)
+  @mashWater = (totalGrain * @mashThickness)/4
+  @spargeWater = @totalWater - @mashWater
 end
-
-# inputs
-#   1) Pre-Fermentation Volume (gal or l)
-#   2) Total Grain (lb or kg)
-#   3) Boil Time (in minutes)
-#
-# specify that we set the other variables as constant (in glade)
-#
-# outputs
-#   1) Mash Water (gal or l)
-#   2) Sparge Water (gal or l)
-#   3) Total Water (gal or l)
-#
-# preFermentVolume = user input
-# totalGrain = user input
-# boilTime = user input
-# trubLoss = has to be a percentage of the boil size. the guy has it set to 0.5 gallons, but that won't be accurate for a 100 gallon batch
-# equipmentLoss = how much is left in the bottom of the boil kettle (this also needs to be proportionate to the boil size)
-# mashThickness = 1.33 lbs/quart
-# grainTemperature = constant 70F/21.111C ("room temp")
-
-# total water needed (gal) = (((vBatch+vTrub)/(1-(vShrinkage/100)))/(1-(vBoilTime*(vBoiloff/100)))) + vEquipment + (vGrain * vAbsorptionRate)
-# mash volume (gal) = (vGrain * vThickness)/4
-# sparge volume (gal) = vTotalWater - vMashVolume
-# PreBoilVolume = vTotalWater - (vGrain * vAbsorptionRate) - vEquipment

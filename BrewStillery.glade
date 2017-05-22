@@ -36,7 +36,7 @@
               <object class="GtkEntry" id="guestimatorInputBeer">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="tooltip_text" translatable="yes">Starting brix</property>
+                <property name="tooltip_text" translatable="yes">Starting Brix</property>
                 <property name="margin_left">13</property>
                 <property name="margin_right">13</property>
                 <property name="xalign">0.5</property>
@@ -154,7 +154,7 @@
                   <object class="GtkEntry" id="increaseABVBrixInputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Starting brix</property>
+                    <property name="tooltip_text" translatable="yes">Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Starting Brix</property>
@@ -228,7 +228,7 @@
                   <object class="GtkEntry" id="increaseABVNewBrixBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">New starting brix</property>
+                    <property name="tooltip_text" translatable="yes">New Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -256,7 +256,7 @@
                   <object class="GtkEntry" id="increaseABVEstimatedABVBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">New estimated ABV</property>
+                    <property name="tooltip_text" translatable="yes">New Estimated ABV</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -321,6 +321,7 @@
                   <object class="GtkEntry" id="sugarAddOutputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Sugar To Add</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -348,6 +349,7 @@
                   <object class="GtkEntry" id="honeyAddOutputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Honey To Add</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -430,6 +432,7 @@
                   <object class="GtkEntry" id="realABVStartingBrixInputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Starting Brix</property>
@@ -444,6 +447,7 @@
                   <object class="GtkEntry" id="realABVFinalBrixInputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Final Brix</property>
                     <property name="margin_right">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Final Brix</property>
@@ -486,6 +490,7 @@
                   <object class="GtkEntry" id="realABVFinalAttenuationBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real Attenuation</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -500,6 +505,7 @@
                   <object class="GtkEntry" id="realABVFinalABVBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real ABV</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -630,7 +636,7 @@
                   <object class="GtkEntry" id="preFermentVolumeInputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Starting brix</property>
+                    <property name="tooltip_text" translatable="yes">Pre-Fermentation Volume</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Pre-Fermentation Volume</property>
                   </object>
@@ -644,7 +650,7 @@
                   <object class="GtkEntry" id="totalGrainInputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Desired ABV</property>
+                    <property name="tooltip_text" translatable="yes">Total Grain</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Total Grain</property>
                   </object>
@@ -658,9 +664,9 @@
                   <object class="GtkEntry" id="boilTimeInputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Desired Wort Volume</property>
+                    <property name="tooltip_text" translatable="yes">Boil Time (minutes)</property>
                     <property name="xalign">0.5</property>
-                    <property name="placeholder_text" translatable="yes">Boil Time</property>
+                    <property name="placeholder_text" translatable="yes">Boil Time (minutes)</property>
                   </object>
                   <packing>
                     <property name="expand">True</property>
@@ -698,7 +704,7 @@
                   <object class="GtkEntry" id="mashWaterOutputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Starting brix</property>
+                    <property name="tooltip_text" translatable="yes">Mash Water</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
                   </object>
@@ -712,7 +718,7 @@
                   <object class="GtkEntry" id="spargeWaterOutputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Desired ABV</property>
+                    <property name="tooltip_text" translatable="yes">Sparge Water</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
                   </object>
@@ -726,7 +732,7 @@
                   <object class="GtkEntry" id="totalWaterOutputBeer">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Desired Wort Volume</property>
+                    <property name="tooltip_text" translatable="yes">Total Water</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
                   </object>
@@ -835,7 +841,7 @@
               <object class="GtkEntry" id="guestimatorInputWine">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="tooltip_text" translatable="yes">Starting brix</property>
+                <property name="tooltip_text" translatable="yes">Starting Brix</property>
                 <property name="margin_left">13</property>
                 <property name="margin_right">13</property>
                 <property name="xalign">0.5</property>
@@ -953,7 +959,7 @@
                   <object class="GtkEntry" id="increaseABVBrixInputWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Starting brix</property>
+                    <property name="tooltip_text" translatable="yes">Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Starting Brix</property>
@@ -1027,7 +1033,7 @@
                   <object class="GtkEntry" id="increaseABVNewBrixWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">New starting brix</property>
+                    <property name="tooltip_text" translatable="yes">New Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1055,7 +1061,7 @@
                   <object class="GtkEntry" id="increaseABVEstimatedABVWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">New estimated ABV</property>
+                    <property name="tooltip_text" translatable="yes">New Estimated ABV</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1120,6 +1126,7 @@
                   <object class="GtkEntry" id="sugarAddOutputWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Sugar To Add</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1147,6 +1154,7 @@
                   <object class="GtkEntry" id="honeyAddOutputWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Honey To Add</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1229,6 +1237,7 @@
                   <object class="GtkEntry" id="realABVStartingBrixInputWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Starting Brix</property>
@@ -1243,6 +1252,7 @@
                   <object class="GtkEntry" id="realABVFinalBrixInputWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Final Brix</property>
                     <property name="margin_right">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Final Brix</property>
@@ -1285,6 +1295,7 @@
                   <object class="GtkEntry" id="realABVFinalAttenuationWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real Attenuation</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1299,6 +1310,7 @@
                   <object class="GtkEntry" id="realABVFinalABVWine">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real ABV</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1684,6 +1696,7 @@
                   <object class="GtkEntry" id="sugarAddOutputChampagne">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Sugar To Add</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1711,6 +1724,7 @@
                   <object class="GtkEntry" id="honeyAddOutputChampagne">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Honey To Add</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1793,6 +1807,7 @@
                   <object class="GtkEntry" id="realABVStartingBrixInputChampagne">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Starting Brix</property>
@@ -1807,6 +1822,7 @@
                   <object class="GtkEntry" id="realABVFinalBrixInputChampagne">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Final Brix</property>
                     <property name="margin_right">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Final Brix</property>
@@ -1849,6 +1865,7 @@
                   <object class="GtkEntry" id="realABVFinalAttenuationChampagne">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real Attenuation</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -1863,6 +1880,7 @@
                   <object class="GtkEntry" id="realABVFinalABVChampagne">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real ABV</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -2248,6 +2266,7 @@
                   <object class="GtkEntry" id="sugarAddOutputSpirits">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Sugar To Add</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -2275,6 +2294,7 @@
                   <object class="GtkEntry" id="honeyAddOutputSpirits">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Honey To Add</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -2357,6 +2377,7 @@
                   <object class="GtkEntry" id="realABVStartingBrixInputSpirits">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Starting Brix</property>
                     <property name="margin_left">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Starting Brix</property>
@@ -2371,6 +2392,7 @@
                   <object class="GtkEntry" id="realABVFinalBrixInputSpirits">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Final Brix</property>
                     <property name="margin_right">13</property>
                     <property name="xalign">0.5</property>
                     <property name="placeholder_text" translatable="yes">Final Brix</property>
@@ -2413,6 +2435,7 @@
                   <object class="GtkEntry" id="realABVFinalAttenuationSpirits">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real Attenuation</property>
                     <property name="margin_left">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
@@ -2427,6 +2450,7 @@
                   <object class="GtkEntry" id="realABVFinalABVSpirits">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Real ABV</property>
                     <property name="margin_right">13</property>
                     <property name="editable">False</property>
                     <property name="xalign">0.5</property>
