@@ -1,0 +1,21 @@
+[package]
+name = "BrewStillery"
+version = "1.0.0"
+authors = ["Emily And Meade <thedarkula2049@gmail.com>"]
+
+[dependencies]
+regex = "0.2.2"
+
+
+[dependencies.gtk]
+version = "0.2.0"
+features = ["v3_22"]
+
+
+[profile.dev]
+codegen-units = 4
+
+
+[profile.release]
+opt-level = 3
+codegen-units = 4

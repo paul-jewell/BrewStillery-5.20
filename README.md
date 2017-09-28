@@ -1,5 +1,6 @@
 # BrewStillery
-An all-in-one beer, wine, and spirits tool
+An all-in-one beer, wine, and spirits tool.
+Written in Rust and GTK3
 
 
 
