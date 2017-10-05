@@ -10,7 +10,7 @@ repository = "https://github.com/MonkeyLog/BrewStillery"
 readme = "README.md"
 keywords = ["beer", "wine", "champagne", "distilling", "calculator"]
 categories = ["science", "gui"]
-license = "Affero General Public License v1.0"
+license = "AGPL-1.0"
 maintenance = { status = "actively-developed" }
 exclude = ["screenshots/*"]
 
