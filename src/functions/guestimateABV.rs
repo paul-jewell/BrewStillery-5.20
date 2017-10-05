@@ -48,7 +48,7 @@ pub fn guestiMaths(buffer: String, guestimatorOutput: String, ref guestimatorBui
 
     let estimatedABW = (originalExtract - realExtract) /  ( 2.0665 - (0.010665 * originalExtract));
     let estimatedABV = estimatedABW * (finalGravity / 0.794);
-    let abv = format!("{:.2}", estimatedABV);
+    let abv = format!("{:.2}%", estimatedABV);
     let ref output: &gtk::Entry = &guestimatorBuilderClone.get_object(&guestimatorOutput).unwrap();
     output.set_text(&abv.to_string());
 }

@@ -12,8 +12,8 @@ pub fn gyleCarbonationPrep(ref gyleBuilderClone: &gtk::Builder) {
     let gyleCO2Input: &gtk::Entry = &gyleBuilderClone.get_object("gyleCO2Input").unwrap();
     let gyleCO2InputBuffer = gyleCO2Input.get_text().expect("No input");
 
-    let gyleFinalVolumeInput: &gtk::Entry = &gyleBuilderClone.get_object("gyleFinalVolumeInput").unwrap();
-    let gyleFinalVolumeInputBuffer = gyleFinalVolumeInput.get_text().expect("No input");
+    let gyleWortVolumeInput: &gtk::Entry = &gyleBuilderClone.get_object("gyleWortVolumeInput").unwrap();
+    let gyleWortVolumeInputBuffer = gyleWortVolumeInput.get_text().expect("No input");
 
 
 
@@ -28,24 +28,24 @@ pub fn gyleCarbonationPrep(ref gyleBuilderClone: &gtk::Builder) {
     } else if gyleCO2InputBuffer == "" || isNumerical.is_match(&gyleCO2InputBuffer) == false || isCharacter.is_match(&gyleCO2InputBuffer) == true || isMismatched.is_match(&gyleCO2InputBuffer) == true {
         let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
         output.set_text("Enter a number");
-    } else if gyleFinalVolumeInputBuffer == "" || isNumerical.is_match(&gyleFinalVolumeInputBuffer) == false || isCharacter.is_match(&gyleFinalVolumeInputBuffer) == true || isMismatched.is_match(&gyleFinalVolumeInputBuffer) == true {
+    } else if gyleWortVolumeInputBuffer == "" || isNumerical.is_match(&gyleWortVolumeInputBuffer) == false || isCharacter.is_match(&gyleWortVolumeInputBuffer) == true || isMismatched.is_match(&gyleWortVolumeInputBuffer) == true {
         let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
         output.set_text("Enter a number");
     } else {
         let gyleBrixInputBufferFloat: f32 = gyleBrixInputBuffer.parse().unwrap();
         let gyleCO2InputBufferFloat: f32 = gyleCO2InputBuffer.parse().unwrap();
-        let gyleFinalVolumeInputBufferFloat: f32 = gyleFinalVolumeInputBuffer.parse().unwrap();
+        let gyleWortVolumeInputBufferFloat: f32 = gyleWortVolumeInputBuffer.parse().unwrap();
         if gyleBrixInputBufferFloat <= 0.0 {
             let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
             output.set_text("Enter a positive number");
         } else if gyleCO2InputBufferFloat <= 0.0 {
             let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
             output.set_text("Enter a positive number");
-        } else if gyleFinalVolumeInputBufferFloat <= 0.0 {
+        } else if gyleWortVolumeInputBufferFloat <= 0.0 {
             let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
             output.set_text("Enter a positive number");
         } else {
-            onGyleActivate(gyleBrixInputBuffer, gyleCO2InputBuffer, gyleFinalVolumeInputBuffer, &gyleBuilderClone);
+            onGyleActivate(gyleBrixInputBuffer, gyleCO2InputBuffer, gyleWortVolumeInputBuffer, &gyleBuilderClone);
         }
     }
 }

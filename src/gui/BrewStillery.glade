@@ -54,7 +54,7 @@
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
                         <property name="xalign">0.5</property>
-                        <property name="placeholder_text" translatable="yes">Enter your starting brix</property>
+                        <property name="placeholder_text" translatable="yes">Starting Brix</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -83,7 +83,7 @@
                       <object class="GtkEntry" id="guestimatorOutput">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Guestimated ABV</property>
+                        <property name="tooltip_text" translatable="yes">Estimated ABV</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
                         <property name="editable">False</property>
@@ -945,7 +945,7 @@
                           <object class="GtkEntry" id="gyleCO2Input">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Desired ABV</property>
+                            <property name="tooltip_text" translatable="yes">Desired CO2 Level</property>
                             <property name="margin_left">3</property>
                             <property name="margin_right">3</property>
                             <property name="xalign">0.5</property>
@@ -958,13 +958,13 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="gyleFinalVolumeInput">
+                          <object class="GtkEntry" id="gyleWortVolumeInput">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Desired Wort Volume</property>
+                            <property name="tooltip_text" translatable="yes">Wort Volume</property>
                             <property name="margin_right">13</property>
                             <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Final Volume</property>
+                            <property name="placeholder_text" translatable="yes">Wort Volume</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1000,7 +1000,7 @@
                       <object class="GtkEntry" id="gyleOutput">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Guestimated ABV</property>
+                        <property name="tooltip_text" translatable="yes">Gyle To Reserve</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
                         <property name="editable">False</property>
@@ -1116,7 +1116,7 @@
                       <object class="GtkEntry" id="champagneCarbonationInput">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Starting brix</property>
+                        <property name="tooltip_text" translatable="yes">Volume To Carbonate</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
                         <property name="xalign">0.5</property>

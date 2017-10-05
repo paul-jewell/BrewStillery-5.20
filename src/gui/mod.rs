@@ -136,10 +136,10 @@ pub fn startGTK() {
         gyleCarbonationPrep(&gyleCO2InputBuilderClone);
     });
 
-    let gyleFinalVolumeInput: gtk::Entry = builder.get_object("gyleFinalVolumeInput").unwrap();
-    let gyleFinalVolumeInputBuilderClone = builder.clone();
-    gyleFinalVolumeInput.connect_activate(move |_| {
-        gyleCarbonationPrep(&gyleFinalVolumeInputBuilderClone);
+    let gyleWortVolumeInput: gtk::Entry = builder.get_object("gyleWortVolumeInput").unwrap();
+    let gyleWortVolumeInputBuilderClone = builder.clone();
+    gyleWortVolumeInput.connect_activate(move |_| {
+        gyleCarbonationPrep(&gyleWortVolumeInputBuilderClone);
     });
 
 
