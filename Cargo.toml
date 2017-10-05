@@ -12,7 +12,7 @@ keywords = ["beer", "wine", "champagne", "distilling", "calculator"]
 categories = ["science", "gui"]
 license = "AGPL-1.0"
 maintenance = { status = "actively-developed" }
-exclude = ["screenshots/*"]
+exclude = ["screenshots/*", "PKGBUILD"]
 
 [dependencies]
 regex = "0.2.2"
