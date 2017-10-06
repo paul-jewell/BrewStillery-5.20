@@ -1,6 +1,6 @@
 [root]
 name = "BrewStillery"
-version = "1.0.1"
+version = "1.1.0"
 dependencies = [
  "gtk 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -151,7 +151,7 @@ dependencies = [
  "bitflags 0.9.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "glib-sys 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "gobject-sys 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "lazy_static 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -218,7 +218,7 @@ dependencies = [
 
 [[package]]
 name = "lazy_static"
-version = "0.2.8"
+version = "0.2.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -286,7 +286,7 @@ name = "thread_local"
 version = "0.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "lazy_static 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "unreachable 1.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -331,7 +331,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum gobject-sys 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "edc95561e538381576425264a4ddd08c65d5da218f10b2a47b4479dd147775da"
 "checksum gtk 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ce17f98e7dcdc9d06b3a5f7621d796a24937c04953481205b1be267c5a02697a"
 "checksum gtk-sys 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "854b56ce6d6b05945f7735651482835c5ac1f8582142ce67306726259a3dafb0"
-"checksum lazy_static 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "3b37545ab726dd833ec6420aaba8231c5b320814b9029ad585555d2a03e94fbf"
+"checksum lazy_static 0.2.9 (registry+https://github.com/rust-lang/crates.io-index)" = "c9e5e58fa1a4c3b915a561a78a22ee0cac6ab97dca2504428bc1cb074375f8d5"
 "checksum libc 0.2.31 (registry+https://github.com/rust-lang/crates.io-index)" = "d1419b2939a0bc44b77feb34661583c7546b532b192feab36249ab584b86856c"
 "checksum memchr 1.0.1 (registry+https://github.com/rust-lang/crates.io-index)" = "1dbccc0e46f1ea47b9f17e6d67c5a96bd27030519c519c9c91327e31275a47b4"
 "checksum pango 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = "5afa4b4c5380315b12075e7767d9bdd62d53beeb6087d9287ef6990e57a6b643"

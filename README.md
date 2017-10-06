@@ -6,11 +6,11 @@ Written in Rust, using GTK3
 
 
 ## Screenshots:
-![General Tab Screenshot](screenshots/BrewStilleryGeneralTab.png)
+![General Tab Screenshot](media/screenshots/BrewStilleryGeneralTab.png)
 
-![Beer Tab Screenshot](screenshots/BrewStilleryBeerTab.png)
+![Beer Tab Screenshot](media/screenshots/BrewStilleryBeerTab.png)
 
-![Champagne Tab Screenshot](screenshots/BrewStilleryChampagneTab.png)
+![Champagne Tab Screenshot](media/screenshots/BrewStilleryChampagneTab.png)
 
 
 ## To Do:
@@ -21,6 +21,7 @@ Written in Rust, using GTK3
 ## Building:
   In Cargo.toml, set ```codegen-units``` to however many cores you want to use to compile.
   To build, just run ```cargo build --release```. The resultant binary will be ```target/release/BrewStillery```.
+  To install/uninstall system-wide, run ```install.sh``` or ```uninstall.sh```
 
 
 ## Sources:

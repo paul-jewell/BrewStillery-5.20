@@ -945,11 +945,11 @@
                           <object class="GtkEntry" id="gyleCO2Input">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Desired CO2 Level</property>
+                            <property name="tooltip_text" translatable="yes">Desired CO2 Level (g/L)</property>
                             <property name="margin_left">3</property>
                             <property name="margin_right">3</property>
                             <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Desired CO2 Level</property>
+                            <property name="placeholder_text" translatable="yes">Desired CO2 Level (g/L)</property>
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -1220,6 +1220,81 @@
                   </object>
                   <packing>
                     <property name="position">3</property>
+                    <property name="tab_fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkImage" id="brewstilleryLogo">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">/usr/share/BrewStillery/BrewStilleryLogo.svg</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="versionNumber">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Version 1.1.0</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLinkButton" id="githubLink">
+                        <property name="label" translatable="yes">Visit Us On github</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="relief">none</property>
+                        <property name="uri">https://github.com/MonkeyLog/BrewStillery</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLinkButton" id="cratesLink">
+                        <property name="label" translatable="yes">Visit Us On crates.io</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="relief">none</property>
+                        <property name="uri">https://crates.io/crates/BrewStillery</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">About</property>
+                  </object>
+                  <packing>
+                    <property name="position">4</property>
                     <property name="tab_fill">False</property>
                   </packing>
                 </child>

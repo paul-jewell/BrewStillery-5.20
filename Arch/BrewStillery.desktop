@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=BrewStillery
+Comment=BrewStillery is a brewer's, vintner's, and distiller's calculator. It has a multitude of great functions, such as calculating ABV, determining carbonation, and total sparge water needed.
+Exec=/usr/bin/BrewStillery
+Icon=/usr/share/BrewStillery/BrewStilleryIcon.svg
+Terminal=false
+Type=Application
+Categories=GTK;Utility;Science;Calculator;
