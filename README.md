@@ -19,6 +19,8 @@ Written in Rust, using GTK3
 
 
 ## Building:
+  To install on Arch, the AUR package name is ```brewstillery```.
+
   In Cargo.toml, set ```codegen-units``` to however many cores you want to use to compile.
 
   To build, just run ```cargo build --release```. The resultant binary will be ```target/release/BrewStillery```.
