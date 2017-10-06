@@ -20,8 +20,16 @@ Written in Rust, using GTK3
 
 ## Building:
   In Cargo.toml, set ```codegen-units``` to however many cores you want to use to compile.
+
   To build, just run ```cargo build --release```. The resultant binary will be ```target/release/BrewStillery```.
-  To install/uninstall system-wide, run ```install.sh``` or ```uninstall.sh```
+
+  To install/uninstall system-wide, run ```install.sh``` or ```uninstall.sh``` from the scripts directory.
+
+  If you're installing with ```cargo install BrewStillery```, the logo image will be missing.
+
+  To fix this, you will need ```BrewStilleryLogo.svg``` from the media directory.
+
+  Install it with ```sudo install -Dm755 ../media/BrewStilleryLogo.svg /usr/share/BrewStillery/BrewStilleryLogo.svg```
 
 
 ## Sources:
