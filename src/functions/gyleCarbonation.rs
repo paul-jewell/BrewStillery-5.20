@@ -1,61 +1,51 @@
 #![allow(non_snake_case)]
 
-use gtk::{self};
+use gtk;
 use gtk::prelude::*;
-use regex::Regex;
 use functions::commonFunctions::*;
 
 pub fn gyleCarbonationPrep(ref gyleBuilderClone: &gtk::Builder) {
     let gyleBrixInput: &gtk::Entry = &gyleBuilderClone.get_object("gyleBrixInput").unwrap();
     let gyleBrixInputBuffer = gyleBrixInput.get_text().expect("No input");
+    let startingBrix = validInput(&gyleBrixInputBuffer);
 
     let gyleCO2Input: &gtk::Entry = &gyleBuilderClone.get_object("gyleCO2Input").unwrap();
     let gyleCO2InputBuffer = gyleCO2Input.get_text().expect("No input");
+    let desiredCO2Level = validInput(&gyleCO2InputBuffer);
 
     let gyleWortVolumeInput: &gtk::Entry = &gyleBuilderClone.get_object("gyleWortVolumeInput").unwrap();
     let gyleWortVolumeInputBuffer = gyleWortVolumeInput.get_text().expect("No input");
+    let finalVolume = validInput(&gyleWortVolumeInputBuffer);
 
+    let gyleOutput = String::from("gyleOutput");
 
-
-    let spargeMashWaterOutput = String::from("spargeMashWaterOutput");
-    let isNumerical = Regex::new(r"^\d+\.\d+|\d+$").unwrap();
-    let isCharacter = Regex::new(r"^\D$").unwrap();
-    let isMismatched = Regex::new(r"^\d+\D+|\d+\D+\d+$").unwrap();
-
-    if gyleBrixInputBuffer == "" || isNumerical.is_match(&gyleBrixInputBuffer) == false || isCharacter.is_match(&gyleBrixInputBuffer) == true || isMismatched.is_match(&gyleBrixInputBuffer) == true {
-        let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
+    if startingBrix == 0.0 {
+        let output: gtk::Entry = gyleBuilderClone.get_object(&gyleOutput).unwrap();
         output.set_text("Enter a number");
-    } else if gyleCO2InputBuffer == "" || isNumerical.is_match(&gyleCO2InputBuffer) == false || isCharacter.is_match(&gyleCO2InputBuffer) == true || isMismatched.is_match(&gyleCO2InputBuffer) == true {
-        let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
+    } else if desiredCO2Level == 0.0 {
+        let output: gtk::Entry = gyleBuilderClone.get_object(&gyleOutput).unwrap();
         output.set_text("Enter a number");
-    } else if gyleWortVolumeInputBuffer == "" || isNumerical.is_match(&gyleWortVolumeInputBuffer) == false || isCharacter.is_match(&gyleWortVolumeInputBuffer) == true || isMismatched.is_match(&gyleWortVolumeInputBuffer) == true {
-        let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
+    } else if finalVolume == 0.0 {
+        let output: gtk::Entry = gyleBuilderClone.get_object(&gyleOutput).unwrap();
         output.set_text("Enter a number");
     } else {
-        let gyleBrixInputBufferFloat: f32 = gyleBrixInputBuffer.parse().unwrap();
-        let gyleCO2InputBufferFloat: f32 = gyleCO2InputBuffer.parse().unwrap();
-        let gyleWortVolumeInputBufferFloat: f32 = gyleWortVolumeInputBuffer.parse().unwrap();
-        if gyleBrixInputBufferFloat <= 0.0 {
-            let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
+        if startingBrix <= 0.0 {
+            let output: gtk::Entry = gyleBuilderClone.get_object(&gyleOutput).unwrap();
             output.set_text("Enter a positive number");
-        } else if gyleCO2InputBufferFloat <= 0.0 {
-            let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
+        } else if desiredCO2Level <= 0.0 {
+            let output: gtk::Entry = gyleBuilderClone.get_object(&gyleOutput).unwrap();
             output.set_text("Enter a positive number");
-        } else if gyleWortVolumeInputBufferFloat <= 0.0 {
-            let output: gtk::Entry = gyleBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
+        } else if finalVolume <= 0.0 {
+            let output: gtk::Entry = gyleBuilderClone.get_object(&gyleOutput).unwrap();
             output.set_text("Enter a positive number");
         } else {
-            onGyleActivate(gyleBrixInputBuffer, gyleCO2InputBuffer, gyleWortVolumeInputBuffer, &gyleBuilderClone);
+            onGyleActivate(startingBrix, desiredCO2Level, finalVolume, &gyleBuilderClone);
         }
     }
 }
 
-pub fn onGyleActivate(startingBrixBuffer: String, desiredCO2LevelBuffer: String, finalVolumeBuffer: String, ref gyleBuilderClone: &gtk::Builder) {
+pub fn onGyleActivate(startingBrix: f32, desiredCO2Level: f32, finalVolume: f32, ref gyleBuilderClone: &gtk::Builder) {
     let ref gyleCarbonationSwitch: &gtk::Switch = &gyleBuilderClone.get_object("gyleCarbonationSwitch").unwrap();
-
-    let startingBrix: f32 = startingBrixBuffer.parse().unwrap();
-    let desiredCO2Level: f32 = desiredCO2LevelBuffer.parse().unwrap();
-    let finalVolume: f32 = finalVolumeBuffer.parse().unwrap();
 
     if gyleCarbonationSwitch.get_active() == true {
         let imperialOrMetric = String::from("metric");

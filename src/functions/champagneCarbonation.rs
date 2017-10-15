@@ -1,36 +1,31 @@
 #![allow(non_snake_case)]
 
-use gtk::{self};
+use gtk;
 use gtk::prelude::*;
-use regex::Regex;
+use functions::commonFunctions::*;
 
 pub fn champagneCarbonationPrep(ref champagneCarbonationBuilderClone: &gtk::Builder) {
     let champagneCarbonationInput: &gtk::Entry = &champagneCarbonationBuilderClone.get_object("champagneCarbonationInput").unwrap();
     let champagneCarbonationInputBuffer = champagneCarbonationInput.get_text().expect("No input");
+    let champagneVolume = validInput(&champagneCarbonationInputBuffer);
 
     let champagneCarbonationOutput = String::from("champagneCarbonationOutput");
-    let isNumerical = Regex::new(r"^\d+\.\d+|\d+$").unwrap();
-    let isCharacter = Regex::new(r"^\D$").unwrap();
-    let isMismatched = Regex::new(r"^\d+\D+|\d+\D+\d+$").unwrap();
 
-    if champagneCarbonationInputBuffer == "" || isNumerical.is_match(&champagneCarbonationInputBuffer) == false || isCharacter.is_match(&champagneCarbonationInputBuffer) == true || isMismatched.is_match(&champagneCarbonationInputBuffer) == true {
+    if champagneVolume == 0.0 {
         let output: gtk::Entry = champagneCarbonationBuilderClone.get_object(&champagneCarbonationOutput).unwrap();
         output.set_text("Enter a number");
     } else {
-        let champagneCarbonationInputBufferFloat: f32 = champagneCarbonationInputBuffer.parse().unwrap();
-        if champagneCarbonationInputBufferFloat <= 0.0 {
+        if champagneVolume <= 0.0 {
             let output: gtk::Entry = champagneCarbonationBuilderClone.get_object(&champagneCarbonationOutput).unwrap();
             output.set_text("Enter a positive number");
         } else {
-            onChampagneActivate(champagneCarbonationInputBuffer, &champagneCarbonationBuilderClone);
+            onChampagneActivate(champagneVolume, &champagneCarbonationBuilderClone);
         }
     }
 }
 
-pub fn onChampagneActivate(champagneCarbonationInputBuffer: String, ref champagneCarbonationBuilderClone: &gtk::Builder) {
+pub fn onChampagneActivate(champagneVolume: f32, ref champagneCarbonationBuilderClone: &gtk::Builder) {
     let ref champagneCarbonationSwitch: &gtk::Switch = &champagneCarbonationBuilderClone.get_object("champagneCarbonationSwitch").unwrap();
-
-    let champagneVolume: f32 = champagneCarbonationInputBuffer.parse().unwrap();
 
     if champagneCarbonationSwitch.get_active() == true {
         let imperialOrMetric = String::from("metric");

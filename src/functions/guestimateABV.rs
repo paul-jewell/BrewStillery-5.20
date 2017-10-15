@@ -1,37 +1,33 @@
 #![allow(non_snake_case)]
 
-use gtk::{self};
+use gtk;
 use gtk::prelude::*;
-use regex::Regex;
 use functions::commonFunctions::*;
 
 pub fn guestimatePrep(ref guestimatorBuilderClone: &gtk::Builder) {
     let guestimatorInput: &gtk::Entry = &guestimatorBuilderClone.get_object("guestimatorInput").unwrap();
-    let buffer = guestimatorInput.get_text().expect("No input");
+    let guestimatorInput = guestimatorInput.get_text().expect("No input");
+    let startingBrix = validInput(&guestimatorInput);
+    
     let guestimatorOutput = String::from("guestimatorOutput");
-    let isNumerical = Regex::new(r"^\d+\.\d+|\d+$").unwrap();
-    let isCharacter = Regex::new(r"^\D$").unwrap();
-    let isMismatched = Regex::new(r"^\d+\D+|\d+\D+\d+$").unwrap();
 
-    if buffer == "" || isNumerical.is_match(&buffer) == false || isCharacter.is_match(&buffer) == true || isMismatched.is_match(&buffer) == true {
+    if startingBrix == 0.0 {
         let output: gtk::Entry = guestimatorBuilderClone.get_object(&guestimatorOutput).unwrap();
         output.set_text("Enter a number");
     } else {
-        let bufferFloat: f32 = buffer.parse().unwrap();
-        if bufferFloat < 3.83 {
+        if startingBrix < 3.83 {
             let output: gtk::Entry = guestimatorBuilderClone.get_object(&guestimatorOutput).unwrap();
             output.set_text("Enter a number greater than 3.83");
-        } else if bufferFloat > 49.48 {
+        } else if startingBrix > 49.48 {
             let output: gtk::Entry = guestimatorBuilderClone.get_object(&guestimatorOutput).unwrap();
             output.set_text("Enter a number less than 49.48");
         } else {
-            guestiMaths(buffer, guestimatorOutput, &guestimatorBuilderClone);
+            guestiMaths(startingBrix, guestimatorOutput, &guestimatorBuilderClone);
         }
     }
 }
 
-pub fn guestiMaths(buffer: String, guestimatorOutput: String, ref guestimatorBuilderClone: &gtk::Builder) {
-    let startingBrix: f32 = buffer.parse().unwrap();
+pub fn guestiMaths(startingBrix: f32, guestimatorOutput: String, ref guestimatorBuilderClone: &gtk::Builder) {
     let originalGravity = brixToGravity(startingBrix);
     let finalGravity: f32 = 1.015;
     // since finalGravity is unknown, this constant is ideal

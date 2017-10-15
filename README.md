@@ -4,17 +4,21 @@ It has a multitude of great functions, such as calculating ABV, determining carb
 
 Written in Rust, using GTK3
 
+## New In 2.0.0
+Added the IBU calculator to the beer tab.
+
 
 ## Screenshots:
 ![General Tab Screenshot](media/screenshots/BrewStilleryGeneralTab.png)
 
 ![Beer Tab Screenshot](media/screenshots/BrewStilleryBeerTab.png)
 
+![Beer Tab IBU Screenshot](media/screenshots/BrewStilleryBeerIBU.png)
+
 ![Champagne Tab Screenshot](media/screenshots/BrewStilleryChampagneTab.png)
 
 
 ## To Do:
-  * IBU
   * Grain
 
 
@@ -37,3 +41,4 @@ Written in Rust, using GTK3
 ## Sources:
   * ["Brew By Numbers - Add Up What's In Your Beer"](https://www.homebrewersassociation.org/attachments/0000/2497/Math_in_Mash_SummerZym95.pdf) - Michael L. Hall. PH.D., Zymurgy (Summer) 1995
   * ["Kraeusening"](http://www.braukaiser.com/wiki/index.php?title=Kraeusening) - Braukaiser.com, Modified: January 2, 2010
+  * ["Glenn Tinseth's Hop Page"](http://realbeer.com/hops/) - Glenn Tinseth, 1995-1999

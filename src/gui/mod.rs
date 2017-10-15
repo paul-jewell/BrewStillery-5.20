@@ -1,6 +1,6 @@
 #![allow(non_snake_case)]
 
-use gtk::{self};
+use gtk;
 use gtk::prelude::*;
 
 use functions::guestimateABV::*;
@@ -8,6 +8,7 @@ use functions::increaseABV::*;
 use functions::realABV::*;
 use functions::waterSparge::*;
 use functions::gyleCarbonation::*;
+use functions::guestimateIBU::*;
 use functions::champagneCarbonation::*;
 
 pub fn startGTK() {
@@ -140,6 +141,117 @@ pub fn startGTK() {
     let gyleWortVolumeInputBuilderClone = builder.clone();
     gyleWortVolumeInput.connect_activate(move |_| {
         gyleCarbonationPrep(&gyleWortVolumeInputBuilderClone);
+    });
+
+
+    // guestimateIBU Section
+
+    let totalIBUButton: gtk::Button = builder.get_object("totalIBUButton").unwrap();
+    let totalIBUButtonClone = builder.clone();
+    totalIBUButton.connect_clicked(move |_| {
+        guestimateIBUPrep(&totalIBUButtonClone);
+    });
+
+    let totalIBUPreBoilBrixInput: gtk::Entry = builder.get_object("totalIBUPreBoilBrixInput").unwrap();
+    let totalIBUPreBoilBrixInputBuilderClone = builder.clone();
+    totalIBUPreBoilBrixInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUPreBoilBrixInputBuilderClone);
+    });
+
+    let totalIBUWortVolumeInput: gtk::Entry = builder.get_object("totalIBUWortVolumeInput").unwrap();
+    let totalIBUWortVolumeInputBuilderClone = builder.clone();
+    totalIBUWortVolumeInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUWortVolumeInputBuilderClone);
+    });
+
+    let totalIBUBoilTimeInput: gtk::Entry = builder.get_object("totalIBUBoilTimeInput").unwrap();
+    let totalIBUBoilTimeInputBuilderClone = builder.clone();
+    totalIBUBoilTimeInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUBoilTimeInputBuilderClone);
+    });
+
+    let totalIBUFirstHopAlphaInput: gtk::Entry = builder.get_object("totalIBUFirstHopAlphaInput").unwrap();
+    let totalIBUFirstHopAlphaInputBuilderClone = builder.clone();
+    totalIBUFirstHopAlphaInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUFirstHopAlphaInputBuilderClone);
+    });
+
+    let totalIBUFirstHopAmountInput: gtk::Entry = builder.get_object("totalIBUFirstHopAmountInput").unwrap();
+    let totalIBUFirstHopAmountInputBuilderClone = builder.clone();
+    totalIBUFirstHopAmountInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUFirstHopAmountInputBuilderClone);
+    });
+
+    let totalIBUSecondHopAlphaInput: gtk::Entry = builder.get_object("totalIBUSecondHopAlphaInput").unwrap();
+    let totalIBUSecondHopAlphaInputBuilderClone = builder.clone();
+    totalIBUSecondHopAlphaInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUSecondHopAlphaInputBuilderClone);
+    });
+
+    let totalIBUSecondHopAmountInput: gtk::Entry = builder.get_object("totalIBUSecondHopAmountInput").unwrap();
+    let totalIBUSecondHopAmountInputBuilderClone = builder.clone();
+    totalIBUSecondHopAmountInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUSecondHopAmountInputBuilderClone);
+    });
+
+    let totalIBUThirdHopAlphaInput: gtk::Entry = builder.get_object("totalIBUThirdHopAlphaInput").unwrap();
+    let totalIBUThirdHopAlphaInputBuilderClone = builder.clone();
+    totalIBUThirdHopAlphaInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUThirdHopAlphaInputBuilderClone);
+    });
+
+    let totalIBUThirdHopAmountInput: gtk::Entry = builder.get_object("totalIBUThirdHopAmountInput").unwrap();
+    let totalIBUThirdHopAmountInputBuilderClone = builder.clone();
+    totalIBUThirdHopAmountInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUThirdHopAmountInputBuilderClone);
+    });
+
+    let totalIBUFourthHopAlphaInput: gtk::Entry = builder.get_object("totalIBUFourthHopAlphaInput").unwrap();
+    let totalIBUFourthHopAlphaInputBuilderClone = builder.clone();
+    totalIBUFourthHopAlphaInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUFourthHopAlphaInputBuilderClone);
+    });
+
+    let totalIBUFourthHopAmountInput: gtk::Entry = builder.get_object("totalIBUFourthHopAmountInput").unwrap();
+    let totalIBUFourthHopAmountInputBuilderClone = builder.clone();
+    totalIBUFourthHopAmountInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUFourthHopAmountInputBuilderClone);
+    });
+
+    let totalIBUFifthHopAlphaInput: gtk::Entry = builder.get_object("totalIBUFifthHopAlphaInput").unwrap();
+    let totalIBUFifthHopAlphaInputBuilderClone = builder.clone();
+    totalIBUFifthHopAlphaInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUFifthHopAlphaInputBuilderClone);
+    });
+
+    let totalIBUFifthHopAmountInput: gtk::Entry = builder.get_object("totalIBUFifthHopAmountInput").unwrap();
+    let totalIBUFifthHopAmountInputBuilderClone = builder.clone();
+    totalIBUFifthHopAmountInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUFifthHopAmountInputBuilderClone);
+    });
+
+    let totalIBUSixthHopAlphaInput: gtk::Entry = builder.get_object("totalIBUSixthHopAlphaInput").unwrap();
+    let totalIBUSixthHopAlphaInputBuilderClone = builder.clone();
+    totalIBUSixthHopAlphaInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUSixthHopAlphaInputBuilderClone);
+    });
+
+    let totalIBUSixthHopAmountInput: gtk::Entry = builder.get_object("totalIBUSixthHopAmountInput").unwrap();
+    let totalIBUSixthHopAmountInputBuilderClone = builder.clone();
+    totalIBUSixthHopAmountInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUSixthHopAmountInputBuilderClone);
+    });
+
+    let totalIBUSeventhHopAlphaInput: gtk::Entry = builder.get_object("totalIBUSeventhHopAlphaInput").unwrap();
+    let totalIBUSeventhHopAlphaInputBuilderClone = builder.clone();
+    totalIBUSeventhHopAlphaInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUSeventhHopAlphaInputBuilderClone);
+    });
+
+    let totalIBUSeventhHopAmountInput: gtk::Entry = builder.get_object("totalIBUSeventhHopAmountInput").unwrap();
+    let totalIBUSeventhHopAmountInputBuilderClone = builder.clone();
+    totalIBUSeventhHopAmountInput.connect_activate(move |_| {
+        guestimateIBUPrep(&totalIBUSeventhHopAmountInputBuilderClone);
     });
 
 

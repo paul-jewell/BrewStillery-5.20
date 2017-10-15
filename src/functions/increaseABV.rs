@@ -1,58 +1,51 @@
 #![allow(non_snake_case)]
 
-use gtk::{self};
+use gtk;
 use gtk::prelude::*;
-use regex::Regex;
+use functions::commonFunctions::*;
 
 pub fn increaseABVPrep(ref increaseABVBuilderClone: &gtk::Builder) {
     let increaseABVBrixInput: &gtk::Entry = &increaseABVBuilderClone.get_object("increaseABVBrixInput").unwrap();
     let increaseABVBrixInputBuffer = increaseABVBrixInput.get_text().expect("No input");
+    let startingBrix = validInput(&increaseABVBrixInputBuffer);
 
     let increaseABVABVInput: &gtk::Entry = &increaseABVBuilderClone.get_object("increaseABVABVInput").unwrap();
     let increaseABVABVInputBuffer = increaseABVABVInput.get_text().expect("No input");
+    let desiredABV = validInput(&increaseABVABVInputBuffer);
 
     let increaseABVVolumeInput: &gtk::Entry = &increaseABVBuilderClone.get_object("increaseABVVolumeInput").unwrap();
     let increaseABVVolumeInputBuffer = increaseABVVolumeInput.get_text().expect("No input");
+    let desiredWortVolume = validInput(&increaseABVVolumeInputBuffer);
 
     let increaseABVNewBrixOutput = String::from("increaseABVNewBrixOutput");
-    let isNumerical = Regex::new(r"^\d+\.\d+|\d+$").unwrap();
-    let isCharacter = Regex::new(r"^\D$").unwrap();
-    let isMismatched = Regex::new(r"^\d+\D+|\d+\D+\d+$").unwrap();
 
-    if increaseABVBrixInputBuffer == "" || isNumerical.is_match(&increaseABVBrixInputBuffer) == false || isCharacter.is_match(&increaseABVBrixInputBuffer) == true || isMismatched.is_match(&increaseABVBrixInputBuffer) == true {
+    if startingBrix == 0.0 {
         let output: gtk::Entry = increaseABVBuilderClone.get_object(&increaseABVNewBrixOutput).unwrap();
         output.set_text("Enter a number");
-    } else if increaseABVABVInputBuffer == "" || isNumerical.is_match(&increaseABVABVInputBuffer) == false || isCharacter.is_match(&increaseABVABVInputBuffer) == true || isMismatched.is_match(&increaseABVABVInputBuffer) == true {
+    } else if desiredABV == 0.0 {
         let output: gtk::Entry = increaseABVBuilderClone.get_object(&increaseABVNewBrixOutput).unwrap();
         output.set_text("Enter a number");
-    } else if increaseABVVolumeInputBuffer == "" || isNumerical.is_match(&increaseABVVolumeInputBuffer) == false || isCharacter.is_match(&increaseABVVolumeInputBuffer) == true || isMismatched.is_match(&increaseABVVolumeInputBuffer) == true {
+    } else if desiredWortVolume == 0.0 {
         let output: gtk::Entry = increaseABVBuilderClone.get_object(&increaseABVNewBrixOutput).unwrap();
         output.set_text("Enter a number");
     } else {
-        let increaseABVBrixInputBufferFloat: f32 = increaseABVBrixInputBuffer.parse().unwrap();
-        let increaseABVABVInputBufferFloat: f32 = increaseABVABVInputBuffer.parse().unwrap();
-        let increaseABVVolumeInputBufferFloat: f32 = increaseABVVolumeInputBuffer.parse().unwrap();
-        if increaseABVBrixInputBufferFloat <= 0.0 {
+        if startingBrix <= 0.0 {
             let output: gtk::Entry = increaseABVBuilderClone.get_object(&increaseABVNewBrixOutput).unwrap();
             output.set_text("Enter a positive number");
-        } else if increaseABVABVInputBufferFloat <= 0.0 {
+        } else if desiredABV <= 0.0 {
             let output: gtk::Entry = increaseABVBuilderClone.get_object(&increaseABVNewBrixOutput).unwrap();
             output.set_text("Enter a positive number");
-        } else if increaseABVVolumeInputBufferFloat <= 0.0 {
+        } else if desiredWortVolume <= 0.0 {
             let output: gtk::Entry = increaseABVBuilderClone.get_object(&increaseABVNewBrixOutput).unwrap();
             output.set_text("Enter a positive number");
         } else {
-            onIncreaseActivate(increaseABVBrixInputBuffer, increaseABVABVInputBuffer, increaseABVVolumeInputBuffer, &increaseABVBuilderClone);
+            onIncreaseActivate(startingBrix, desiredABV, desiredWortVolume, &increaseABVBuilderClone);
         }
     }
 }
 
-pub fn onIncreaseActivate(increaseABVBrixInputBuffer: String, increaseABVABVInputBuffer: String, increaseABVVolumeInputBuffer: String, ref increaseABVBuilderClone: &gtk::Builder) {
+pub fn onIncreaseActivate(startingBrix: f32, desiredABV: f32, desiredWortVolume: f32, ref increaseABVBuilderClone: &gtk::Builder) {
     let ref increaseABVSwitch: &gtk::Switch = &increaseABVBuilderClone.get_object("increaseABVSwitch").unwrap();
-
-    let startingBrix: f32 = increaseABVBrixInputBuffer.parse().unwrap();
-    let desiredABV: f32 = increaseABVABVInputBuffer.parse().unwrap();
-    let desiredWortVolume: f32 = increaseABVVolumeInputBuffer.parse().unwrap();
 
     if increaseABVSwitch.get_active() == true {
         let imperialOrMetric = String::from("metric");

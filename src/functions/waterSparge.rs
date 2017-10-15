@@ -1,31 +1,31 @@
 #![allow(non_snake_case)]
 
-use gtk::{self};
+use gtk;
 use gtk::prelude::*;
-use regex::Regex;
+use functions::commonFunctions::*;
 
 pub fn waterSpargePrep(ref waterSpargeBuilderClone: &gtk::Builder) {
     let spargePreFermentVolumeInput: &gtk::Entry = &waterSpargeBuilderClone.get_object("spargePreFermentVolumeInput").unwrap();
     let spargePreFermentVolumeInputBuffer = spargePreFermentVolumeInput.get_text().expect("No input");
+    let preFermentVolume = validInput(&spargePreFermentVolumeInputBuffer);
 
     let spargeTotalGrainInput: &gtk::Entry = &waterSpargeBuilderClone.get_object("spargeTotalGrainInput").unwrap();
     let spargeTotalGrainInputBuffer = spargeTotalGrainInput.get_text().expect("No input");
+    let totalGrain = validInput(&spargeTotalGrainInputBuffer);
 
     let spargeBoilTimeInput: &gtk::Entry = &waterSpargeBuilderClone.get_object("spargeBoilTimeInput").unwrap();
     let spargeBoilTimeInputBuffer = spargeBoilTimeInput.get_text().expect("No input");
+    let boilTemp = validInput(&spargeBoilTimeInputBuffer);
 
     let spargeMashWaterOutput = String::from("spargeMashWaterOutput");
-    let isNumerical = Regex::new(r"^\d+\.\d+|\d+$").unwrap();
-    let isCharacter = Regex::new(r"^\D$").unwrap();
-    let isMismatched = Regex::new(r"^\d+\D+|\d+\D+\d+$").unwrap();
 
-    if spargePreFermentVolumeInputBuffer == "" || isNumerical.is_match(&spargePreFermentVolumeInputBuffer) == false || isCharacter.is_match(&spargePreFermentVolumeInputBuffer) == true || isMismatched.is_match(&spargePreFermentVolumeInputBuffer) == true {
+    if preFermentVolume == 0.0 {
         let output: gtk::Entry = waterSpargeBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
         output.set_text("Enter a number");
-    } else if spargeTotalGrainInputBuffer == "" || isNumerical.is_match(&spargeTotalGrainInputBuffer) == false || isCharacter.is_match(&spargeTotalGrainInputBuffer) == true || isMismatched.is_match(&spargeTotalGrainInputBuffer) == true {
+    } else if totalGrain == 0.0 {
         let output: gtk::Entry = waterSpargeBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
         output.set_text("Enter a number");
-    } else if spargeBoilTimeInputBuffer == "" || isNumerical.is_match(&spargeBoilTimeInputBuffer) == false || isCharacter.is_match(&spargeBoilTimeInputBuffer) == true || isMismatched.is_match(&spargeBoilTimeInputBuffer) == true {
+    } else if boilTemp == 0.0 {
         let output: gtk::Entry = waterSpargeBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
         output.set_text("Enter a number");
     } else {
@@ -42,17 +42,14 @@ pub fn waterSpargePrep(ref waterSpargeBuilderClone: &gtk::Builder) {
             let output: gtk::Entry = waterSpargeBuilderClone.get_object(&spargeMashWaterOutput).unwrap();
             output.set_text("Enter a positive number");
         } else {
-            onSpargeActivate(spargePreFermentVolumeInputBuffer, spargeTotalGrainInputBuffer, spargeBoilTimeInputBuffer, &waterSpargeBuilderClone);
+            onSpargeActivate(preFermentVolume, totalGrain, boilTemp, &waterSpargeBuilderClone);
         }
     }
 }
 
-pub fn onSpargeActivate(spargePreFermentVolumeInputBuffer: String, spargeTotalGrainInputBuffer: String, spargeBoilTimeInputBuffer: String, ref waterSpargeBuilderClone: &gtk::Builder) {
+pub fn onSpargeActivate(preFermentVolume: f32, totalGrain: f32, boilTemp: f32, ref waterSpargeBuilderClone: &gtk::Builder) {
     let ref waterSpargeSwitch: &gtk::Switch = &waterSpargeBuilderClone.get_object("waterSpargeSwitch").unwrap();
 
-    let preFermentVolume: f32 = spargePreFermentVolumeInputBuffer.parse().unwrap();
-    let totalGrain: f32 = spargeTotalGrainInputBuffer.parse().unwrap();
-    let boilTemp: f32 = spargeBoilTimeInputBuffer.parse().unwrap();
     let boilTime: f32 = boilTemp / 60.0;
 
     if waterSpargeSwitch.get_active() == true {
