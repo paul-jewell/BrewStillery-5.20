@@ -9,6 +9,7 @@
     <property name="window_position">center</property>
     <property name="default_width">625</property>
     <property name="default_height">900</property>
+    <property name="icon">/usr/share/BrewStillery/BrewStilleryIcon.svg</property>
     <child>
       <object class="GtkScrolledWindow">
         <property name="visible">True</property>
