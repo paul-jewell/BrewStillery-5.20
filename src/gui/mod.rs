@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 use gtk;
 use gtk::prelude::*;
 
@@ -10,6 +8,7 @@ use functions::waterSparge::*;
 use functions::gyleCarbonation::*;
 use functions::guestimateIBU::*;
 use functions::champagneCarbonation::*;
+use functions::grainToABV::*;
 
 pub fn startGTK() {
     if gtk::init().is_err() {
@@ -270,6 +269,61 @@ pub fn startGTK() {
     });
 
 
+    // grainABV Section
+
+    let grainABVButton: gtk::Button = builder.get_object("grainABVButton").unwrap();
+    let grainABVButtonClone = builder.clone();
+    grainABVButton.connect_clicked(move |_| {
+        grainABVPrep(&grainABVButtonClone);
+    });
+
+    let grainABVWortInput: gtk::Entry = builder.get_object("grainABVWortInput").unwrap();
+    let grainABVWortInputBuilderClone = builder.clone();
+    grainABVWortInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVWortInputBuilderClone);
+    });
+
+    let grainABVFirstAmountInput: gtk::Entry = builder.get_object("grainABVFirstAmountInput").unwrap();
+    let grainABVFirstAmountInputBuilderClone = builder.clone();
+    grainABVFirstAmountInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVFirstAmountInputBuilderClone);
+    });
+
+    let grainABVSecondAmountInput: gtk::Entry = builder.get_object("grainABVSecondAmountInput").unwrap();
+    let grainABVSecondAmountInputBuilderClone = builder.clone();
+    grainABVSecondAmountInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVSecondAmountInputBuilderClone);
+    });
+
+    let grainABVThirdAmountInput: gtk::Entry = builder.get_object("grainABVThirdAmountInput").unwrap();
+    let grainABVThirdAmountInputBuilderClone = builder.clone();
+    grainABVThirdAmountInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVThirdAmountInputBuilderClone);
+    });
+
+    let grainABVFourthAmountInput: gtk::Entry = builder.get_object("grainABVFourthAmountInput").unwrap();
+    let grainABVFourthAmountInputBuilderClone = builder.clone();
+    grainABVFourthAmountInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVFourthAmountInputBuilderClone);
+    });
+
+    let grainABVFifthAmountInput: gtk::Entry = builder.get_object("grainABVFifthAmountInput").unwrap();
+    let grainABVFifthAmountInputBuilderClone = builder.clone();
+    grainABVFifthAmountInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVFifthAmountInputBuilderClone);
+    });
+
+    let grainABVSixthAmountInput: gtk::Entry = builder.get_object("grainABVSixthAmountInput").unwrap();
+    let grainABVSixthAmountInputBuilderClone = builder.clone();
+    grainABVSixthAmountInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVSixthAmountInputBuilderClone);
+    });
+
+    let grainABVSeventhAmountInput: gtk::Entry = builder.get_object("grainABVSeventhAmountInput").unwrap();
+    let grainABVSeventhAmountInputBuilderClone = builder.clone();
+    grainABVSeventhAmountInput.connect_activate(move |_| {
+        grainABVPrep(&grainABVSeventhAmountInputBuilderClone);
+    });
 
     mainWindow.show_all();
 

@@ -4,22 +4,27 @@ It has a multitude of great functions, such as calculating ABV, determining carb
 
 Written in Rust, using GTK3
 
-## New In 2.0.0
-Added the IBU calculator to the beer tab.
+## New In 3.0.0
+Added the grain calculator to the beer tab.
+Reworked the maths in the RealABV calculator, because it was completely inaccurate.
+Reworked the graphical layout as well.
 
 
 ## Screenshots:
 ![General Tab Screenshot](media/screenshots/BrewStilleryGeneralTab.png)
 
-![Beer Tab Screenshot](media/screenshots/BrewStilleryBeerTab.png)
+![Beer Top Tab Screenshot](media/screenshots/BrewStilleryBeerTopTab.png)
 
-![Beer Tab IBU Screenshot](media/screenshots/BrewStilleryBeerIBU.png)
+![Beer Bottom Tab Screenshot](media/screenshots/BrewStilleryBeerBottomTab.png)
 
 ![Champagne Tab Screenshot](media/screenshots/BrewStilleryChampagneTab.png)
 
+![About Tab Screenshot](media/screenshots/BrewStilleryABoutTab.png)
+
 
 ## To Do:
-  * Grain
+  * Water Minerals
+  * Export To Gourmet
 
 
 ## Building:
@@ -42,3 +47,5 @@ Added the IBU calculator to the beer tab.
   * ["Brew By Numbers - Add Up What's In Your Beer"](https://www.homebrewersassociation.org/attachments/0000/2497/Math_in_Mash_SummerZym95.pdf) - Michael L. Hall. PH.D., Zymurgy (Summer) 1995
   * ["Kraeusening"](http://www.braukaiser.com/wiki/index.php?title=Kraeusening) - Braukaiser.com, Modified: January 2, 2010
   * ["Glenn Tinseth's Hop Page"](http://realbeer.com/hops/) - Glenn Tinseth, 1995-1999
+  * ["Calculating Gravity, Bitterness, And Color: Techniques"](https://byo.com/bock/item/409-calculating-gravity-bitterness-and-color-techniques) - Glenn Tinseth, 1995-1999
+  * ["Formulas And C Source Code"](https://web.archive.org/web/20090807084643/http://www.primetab.com:80/formulas) - PrimeTab, Modified: March 25, 2002

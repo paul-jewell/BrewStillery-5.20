@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 use gtk;
 use gtk::prelude::*;
 use functions::commonFunctions::*;
@@ -44,7 +42,7 @@ pub fn gyleCarbonationPrep(ref gyleBuilderClone: &gtk::Builder) {
     }
 }
 
-pub fn onGyleActivate(startingBrix: f32, desiredCO2Level: f32, finalVolume: f32, ref gyleBuilderClone: &gtk::Builder) {
+fn onGyleActivate(startingBrix: f32, desiredCO2Level: f32, finalVolume: f32, ref gyleBuilderClone: &gtk::Builder) {
     let ref gyleCarbonationSwitch: &gtk::Switch = &gyleBuilderClone.get_object("gyleCarbonationSwitch").unwrap();
 
     if gyleCarbonationSwitch.get_active() == true {

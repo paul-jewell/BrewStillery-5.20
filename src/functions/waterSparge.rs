@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 use gtk;
 use gtk::prelude::*;
 use functions::commonFunctions::*;
@@ -47,7 +45,7 @@ pub fn waterSpargePrep(ref waterSpargeBuilderClone: &gtk::Builder) {
     }
 }
 
-pub fn onSpargeActivate(preFermentVolume: f32, totalGrain: f32, boilTemp: f32, ref waterSpargeBuilderClone: &gtk::Builder) {
+fn onSpargeActivate(preFermentVolume: f32, totalGrain: f32, boilTemp: f32, ref waterSpargeBuilderClone: &gtk::Builder) {
     let ref waterSpargeSwitch: &gtk::Switch = &waterSpargeBuilderClone.get_object("waterSpargeSwitch").unwrap();
 
     let boilTime: f32 = boilTemp / 60.0;

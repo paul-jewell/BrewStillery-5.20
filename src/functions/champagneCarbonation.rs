@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 use gtk;
 use gtk::prelude::*;
 use functions::commonFunctions::*;
@@ -24,7 +22,7 @@ pub fn champagneCarbonationPrep(ref champagneCarbonationBuilderClone: &gtk::Buil
     }
 }
 
-pub fn onChampagneActivate(champagneVolume: f32, ref champagneCarbonationBuilderClone: &gtk::Builder) {
+fn onChampagneActivate(champagneVolume: f32, ref champagneCarbonationBuilderClone: &gtk::Builder) {
     let ref champagneCarbonationSwitch: &gtk::Switch = &champagneCarbonationBuilderClone.get_object("champagneCarbonationSwitch").unwrap();
 
     if champagneCarbonationSwitch.get_active() == true {

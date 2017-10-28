@@ -7,23 +7,23 @@
     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_STRUCTURE_MASK</property>
     <property name="title" translatable="yes">BrewStillery</property>
     <property name="window_position">center</property>
-    <property name="default_width">625</property>
+    <property name="default_width">1100</property>
     <property name="default_height">900</property>
     <property name="icon">/usr/share/BrewStillery/BrewStilleryLogo.svg</property>
     <child>
-      <object class="GtkScrolledWindow">
+      <object class="GtkNotebook">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
-        <property name="shadow_type">in</property>
+        <property name="scrollable">True</property>
         <child>
-          <object class="GtkViewport">
+          <object class="GtkScrolledWindow">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
             <child>
-              <object class="GtkNotebook">
+              <object class="GtkViewport">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="scrollable">True</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkBox" id="generalTab">
                     <property name="visible">True</property>
@@ -71,8 +71,8 @@
                         <property name="receives_default">True</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
-                        <property name="margin_top">3</property>
-                        <property name="margin_bottom">3</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -137,6 +137,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_left">350</property>
                             <property name="label" translatable="yes">Imperial</property>
                           </object>
                           <packing>
@@ -160,6 +161,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_right">350</property>
                             <property name="label" translatable="yes">Metric</property>
                           </object>
                           <packing>
@@ -240,8 +242,8 @@
                         <property name="receives_default">True</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
-                        <property name="margin_top">7</property>
-                        <property name="margin_bottom">7</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -463,6 +465,7 @@
                             <property name="can_focus">True</property>
                             <property name="tooltip_text" translatable="yes">Starting Brix</property>
                             <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
                             <property name="xalign">0.5</property>
                             <property name="placeholder_text" translatable="yes">Starting Brix</property>
                           </object>
@@ -477,6 +480,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="tooltip_text" translatable="yes">Final Brix</property>
+                            <property name="margin_left">1</property>
                             <property name="margin_right">13</property>
                             <property name="xalign">0.5</property>
                             <property name="placeholder_text" translatable="yes">Final Brix</property>
@@ -502,8 +506,8 @@
                         <property name="receives_default">True</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
-                        <property name="margin_top">3</property>
-                        <property name="margin_bottom">3</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -512,39 +516,14 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox">
+                      <object class="GtkEntry" id="realABVFinalABVOutput">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="realABVRealAttenuationOutput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Real Attenuation</property>
-                            <property name="margin_left">13</property>
-                            <property name="editable">False</property>
-                            <property name="xalign">0.5</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="realABVFinalABVOutput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Real ABV</property>
-                            <property name="margin_right">13</property>
-                            <property name="editable">False</property>
-                            <property name="xalign">0.5</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
+                        <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Real ABV</property>
+                        <property name="margin_left">13</property>
+                        <property name="margin_right">13</property>
+                        <property name="editable">False</property>
+                        <property name="xalign">0.5</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -553,38 +532,12 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkBox">
+                      <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="margin_top">3</property>
-                            <property name="margin_bottom">17</property>
-                            <property name="label" translatable="yes">Real Attenuation</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="margin_right">21</property>
-                            <property name="margin_top">3</property>
-                            <property name="margin_bottom">17</property>
-                            <property name="label" translatable="yes">Real ABV</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
+                        <property name="margin_top">3</property>
+                        <property name="margin_bottom">17</property>
+                        <property name="label" translatable="yes">Real ABV</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -594,16 +547,29 @@
                     </child>
                   </object>
                 </child>
-                <child type="tab">
-                  <object class="GtkLabel" id="generalTabLabel">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">General</property>
-                  </object>
-                  <packing>
-                    <property name="tab_fill">False</property>
-                  </packing>
-                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="generalTabLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">General</property>
+          </object>
+          <packing>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkBox" id="beerTab">
                     <property name="visible">True</property>
@@ -615,7 +581,7 @@
                         <property name="can_focus">False</property>
                         <property name="margin_top">7</property>
                         <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Total Water Needed</property>
+                        <property name="label" translatable="yes">Estimate ABV From Grain</property>
                         <attributes>
                           <attribute name="font-desc" value="Roboto Bold 13"/>
                         </attributes>
@@ -636,6 +602,568 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_left">350</property>
+                            <property name="label" translatable="yes">Imperial</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSwitch" id="grainABVSwitch">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">350</property>
+                            <property name="label" translatable="yes">Metric</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="grainABVWortInput">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Wort Volume</property>
+                        <property name="margin_left">13</property>
+                        <property name="margin_right">13</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="xalign">0.5</property>
+                        <property name="placeholder_text" translatable="yes">Wort Volume</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVFirstAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Amount</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="grainABVFirstTypeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">13</property>
+                            <property name="active">0</property>
+                            <property name="active_id">2-Row</property>
+                            <items>
+                              <item id="2-Row PG" translatable="yes">2-Row</item>
+                              <item id="6-Row PG" translatable="yes">6-Row</item>
+                              <item id="Black PG" translatable="yes">Black</item>
+                              <item id="Caramel PG" translatable="yes">Caramel</item>
+                              <item id="Chocolate PG" translatable="yes">Chocolate</item>
+                              <item id="Corn PG" translatable="yes">Corn</item>
+                              <item id="Dextrine PG" translatable="yes">Dextrine</item>
+                              <item id="Oat PG" translatable="yes">Oat</item>
+                              <item id="Rice PG" translatable="yes">Rice</item>
+                              <item id="Rye PG" translatable="yes">Rye</item>
+                              <item id="Wheat PG" translatable="yes">Wheat</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVSecondAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Amount</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="grainABVSecondTypeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">13</property>
+                            <property name="active">0</property>
+                            <property name="active_id">2-Row</property>
+                            <items>
+                              <item id="2-Row PG" translatable="yes">2-Row</item>
+                              <item id="6-Row PG" translatable="yes">6-Row</item>
+                              <item id="Black PG" translatable="yes">Black</item>
+                              <item id="Caramel PG" translatable="yes">Caramel</item>
+                              <item id="Chocolate PG" translatable="yes">Chocolate</item>
+                              <item id="Corn PG" translatable="yes">Corn</item>
+                              <item id="Dextrine PG" translatable="yes">Dextrine</item>
+                              <item id="Oat PG" translatable="yes">Oat</item>
+                              <item id="Rice PG" translatable="yes">Rice</item>
+                              <item id="Rye PG" translatable="yes">Rye</item>
+                              <item id="Wheat PG" translatable="yes">Wheat</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVThirdAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Amount</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="grainABVThirdTypeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">13</property>
+                            <property name="active">0</property>
+                            <property name="active_id">2-Row</property>
+                            <items>
+                              <item id="2-Row PG" translatable="yes">2-Row</item>
+                              <item id="6-Row PG" translatable="yes">6-Row</item>
+                              <item id="Black PG" translatable="yes">Black</item>
+                              <item id="Caramel PG" translatable="yes">Caramel</item>
+                              <item id="Chocolate PG" translatable="yes">Chocolate</item>
+                              <item id="Corn PG" translatable="yes">Corn</item>
+                              <item id="Dextrine PG" translatable="yes">Dextrine</item>
+                              <item id="Oat PG" translatable="yes">Oat</item>
+                              <item id="Rice PG" translatable="yes">Rice</item>
+                              <item id="Rye PG" translatable="yes">Rye</item>
+                              <item id="Wheat PG" translatable="yes">Wheat</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVFourthAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Amount</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="grainABVFourthTypeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">13</property>
+                            <property name="active">0</property>
+                            <property name="active_id">2-Row</property>
+                            <items>
+                              <item id="2-Row PG" translatable="yes">2-Row</item>
+                              <item id="6-Row PG" translatable="yes">6-Row</item>
+                              <item id="Black PG" translatable="yes">Black</item>
+                              <item id="Caramel PG" translatable="yes">Caramel</item>
+                              <item id="Chocolate PG" translatable="yes">Chocolate</item>
+                              <item id="Corn PG" translatable="yes">Corn</item>
+                              <item id="Dextrine PG" translatable="yes">Dextrine</item>
+                              <item id="Oat PG" translatable="yes">Oat</item>
+                              <item id="Rice PG" translatable="yes">Rice</item>
+                              <item id="Rye PG" translatable="yes">Rye</item>
+                              <item id="Wheat PG" translatable="yes">Wheat</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVFifthAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Amount</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="grainABVFifthTypeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">13</property>
+                            <property name="active">0</property>
+                            <property name="active_id">2-Row</property>
+                            <items>
+                              <item id="2-Row PG" translatable="yes">2-Row</item>
+                              <item id="6-Row PG" translatable="yes">6-Row</item>
+                              <item id="Black PG" translatable="yes">Black</item>
+                              <item id="Caramel PG" translatable="yes">Caramel</item>
+                              <item id="Chocolate PG" translatable="yes">Chocolate</item>
+                              <item id="Corn PG" translatable="yes">Corn</item>
+                              <item id="Dextrine PG" translatable="yes">Dextrine</item>
+                              <item id="Oat PG" translatable="yes">Oat</item>
+                              <item id="Rice PG" translatable="yes">Rice</item>
+                              <item id="Rye PG" translatable="yes">Rye</item>
+                              <item id="Wheat PG" translatable="yes">Wheat</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVSixthAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Amount</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="grainABVSixthTypeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">13</property>
+                            <property name="active">0</property>
+                            <property name="active_id">2-Row</property>
+                            <items>
+                              <item id="2-Row PG" translatable="yes">2-Row</item>
+                              <item id="6-Row PG" translatable="yes">6-Row</item>
+                              <item id="Black PG" translatable="yes">Black</item>
+                              <item id="Caramel PG" translatable="yes">Caramel</item>
+                              <item id="Chocolate PG" translatable="yes">Chocolate</item>
+                              <item id="Corn PG" translatable="yes">Corn</item>
+                              <item id="Dextrine PG" translatable="yes">Dextrine</item>
+                              <item id="Oat PG" translatable="yes">Oat</item>
+                              <item id="Rice PG" translatable="yes">Rice</item>
+                              <item id="Rye PG" translatable="yes">Rye</item>
+                              <item id="Wheat PG" translatable="yes">Wheat</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVSeventhAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Amount</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkComboBoxText" id="grainABVSeventhTypeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">13</property>
+                            <property name="active">0</property>
+                            <property name="active_id">2-Row</property>
+                            <items>
+                              <item id="2-Row PG" translatable="yes">2-Row</item>
+                              <item id="6-Row PG" translatable="yes">6-Row</item>
+                              <item id="Black PG" translatable="yes">Black</item>
+                              <item id="Caramel PG" translatable="yes">Caramel</item>
+                              <item id="Chocolate PG" translatable="yes">Chocolate</item>
+                              <item id="Corn PG" translatable="yes">Corn</item>
+                              <item id="Dextrine PG" translatable="yes">Dextrine</item>
+                              <item id="Oat PG" translatable="yes">Oat</item>
+                              <item id="Rice PG" translatable="yes">Rice</item>
+                              <item id="Rye PG" translatable="yes">Rye</item>
+                              <item id="Wheat PG" translatable="yes">Wheat</item>
+                            </items>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="grainABVButton">
+                        <property name="label" translatable="yes">Estimate Starting Brix And ABV</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="margin_left">13</property>
+                        <property name="margin_right">13</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="grainABVBrixOutput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Estimated Starting Brix</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Estimated Starting Brix</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="grainABVABVOutput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Estimated ABV</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Estimated ABV</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">11</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_top">3</property>
+                            <property name="margin_bottom">17</property>
+                            <property name="label" translatable="yes">  Estimated Starting Brix</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">False</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_top">3</property>
+                            <property name="margin_bottom">17</property>
+                            <property name="label" translatable="yes">Estimated ABV </property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">False</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">12</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">7</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Total Water Needed</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Roboto Bold 13"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="padding">7</property>
+                        <property name="position">13</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_bottom">3</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_left">350</property>
                             <property name="label" translatable="yes">Imperial</property>
                           </object>
                           <packing>
@@ -659,6 +1187,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_right">350</property>
                             <property name="label" translatable="yes">Metric</property>
                           </object>
                           <packing>
@@ -671,7 +1200,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">1</property>
+                        <property name="position">14</property>
                       </packing>
                     </child>
                     <child>
@@ -728,7 +1257,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">2</property>
+                        <property name="position">15</property>
                       </packing>
                     </child>
                     <child>
@@ -739,13 +1268,13 @@
                         <property name="receives_default">True</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
-                        <property name="margin_top">3</property>
-                        <property name="margin_bottom">3</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">3</property>
+                        <property name="position">16</property>
                       </packing>
                     </child>
                     <child>
@@ -802,7 +1331,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">4</property>
+                        <property name="position">17</property>
                       </packing>
                     </child>
                     <child>
@@ -855,7 +1384,577 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">5</property>
+                        <property name="position">18</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">7</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Total IBU</property>
+                        <attributes>
+                          <attribute name="font-desc" value="Roboto Bold 13"/>
+                        </attributes>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="padding">7</property>
+                        <property name="position">19</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_bottom">3</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_left">350</property>
+                            <property name="label" translatable="yes">Imperial</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkSwitch" id="totalIBUSwitch">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="margin_right">350</property>
+                            <property name="label" translatable="yes">Metric</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">20</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUPreBoilBrixInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Pre-Boil Brix</property>
+                            <property name="margin_left">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Pre-Boil Brix</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUWortVolumeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Wort Volume</property>
+                            <property name="margin_left">3</property>
+                            <property name="margin_right">3</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Wort Volume</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUBoilTimeInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Boil Time (minutes)</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Boil Time (minutes)</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">21</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">First Hop</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">22</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUFirstHopAlphaInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Alpha Acid %</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUFirstHopAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Hop Amount</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">23</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Second Hop</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">24</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUSecondHopAlphaInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Alpha Acid %</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUSecondHopAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Hop Amount</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">25</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Third Hop</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">26</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUThirdHopAlphaInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Alpha Acid %</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUThirdHopAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Hop Amount</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">27</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Fourth Hop</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">28</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUFourthHopAlphaInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Alpha Acid %</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUFourthHopAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Hop Amount</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">29</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Fifth Hop</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">30</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUFifthHopAlphaInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Alpha Acid %</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUFifthHopAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Hop Amount</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">31</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Sixth Hop</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">32</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUSixthHopAlphaInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Alpha Acid %</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUSixthHopAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Hop Amount</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">33</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">3</property>
+                        <property name="label" translatable="yes">Seventh Hop</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">34</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUSeventhHopAlphaInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Alpha Acid %</property>
+                            <property name="margin_left">13</property>
+                            <property name="margin_right">1</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="totalIBUSeventhHopAmountInput">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="tooltip_text" translatable="yes">Hop Amount</property>
+                            <property name="margin_left">1</property>
+                            <property name="margin_right">13</property>
+                            <property name="xalign">0.5</property>
+                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
+                          </object>
+                          <packing>
+                            <property name="expand">True</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">35</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="totalIBUButton">
+                        <property name="label" translatable="yes">Calculate Total IBU</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <property name="margin_left">13</property>
+                        <property name="margin_right">13</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">36</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="totalIBUOutput">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="tooltip_text" translatable="yes">Total IBU</property>
+                        <property name="margin_left">13</property>
+                        <property name="margin_right">13</property>
+                        <property name="editable">False</property>
+                        <property name="xalign">0.5</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">37</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="margin_top">3</property>
+                        <property name="margin_bottom">17</property>
+                        <property name="label" translatable="yes">Total IBU</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">38</property>
                       </packing>
                     </child>
                     <child>
@@ -873,7 +1972,7 @@
                         <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="padding">7</property>
-                        <property name="position">6</property>
+                        <property name="position">39</property>
                       </packing>
                     </child>
                     <child>
@@ -885,6 +1984,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_left">350</property>
                             <property name="label" translatable="yes">Imperial</property>
                           </object>
                           <packing>
@@ -908,6 +2008,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_right">350</property>
                             <property name="label" translatable="yes">Metric</property>
                           </object>
                           <packing>
@@ -920,7 +2021,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">7</property>
+                        <property name="position">40</property>
                       </packing>
                     </child>
                     <child>
@@ -977,7 +2078,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">8</property>
+                        <property name="position">41</property>
                       </packing>
                     </child>
                     <child>
@@ -988,13 +2089,13 @@
                         <property name="receives_default">True</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
-                        <property name="margin_top">3</property>
-                        <property name="margin_bottom">3</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">9</property>
+                        <property name="position">42</property>
                       </packing>
                     </child>
                     <child>
@@ -1010,7 +2111,7 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">10</property>
+                        <property name="position">43</property>
                       </packing>
                     </child>
                     <child>
@@ -1024,557 +2125,38 @@
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
-                        <property name="position">11</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">7</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Total IBU</property>
-                        <attributes>
-                          <attribute name="font-desc" value="Roboto Bold 13"/>
-                        </attributes>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="padding">7</property>
-                        <property name="position">12</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_bottom">3</property>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Imperial</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkSwitch" id="totalIBUSwitch">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Metric</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">2</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">13</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUPreBoilBrixInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Pre-Fermentation Volume</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Pre-Boil Brix</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUWortVolumeInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Total Grain</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Wort Volume</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUBoilTimeInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Boil Time (minutes)</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Boil Time (minutes)</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">2</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">14</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">13</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">First Hop</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">15</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUFirstHopAlphaInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Starting Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUFirstHopAmountInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Final Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">16</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">13</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Second Hop</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">17</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUSecondHopAlphaInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Starting Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUSecondHopAmountInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Final Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">18</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">13</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Third Hop</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">19</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUThirdHopAlphaInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Starting Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUThirdHopAmountInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Final Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">20</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">13</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Fourth Hop</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">21</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUFourthHopAlphaInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Starting Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUFourthHopAmountInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Final Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">22</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">13</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Fifth Hop</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">23</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUFifthHopAlphaInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Starting Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUFifthHopAmountInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Final Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">24</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">13</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Sixth Hop</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">25</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUSixthHopAlphaInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Starting Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUSixthHopAmountInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Final Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">26</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">13</property>
-                        <property name="margin_bottom">3</property>
-                        <property name="label" translatable="yes">Seventh Hop</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">27</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUSeventhHopAlphaInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Starting Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Alpha Acid %</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkEntry" id="totalIBUSeventhHopAmountInput">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">Final Brix</property>
-                            <property name="xalign">0.5</property>
-                            <property name="placeholder_text" translatable="yes">Hop Amount</property>
-                          </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">28</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="totalIBUButton">
-                        <property name="label" translatable="yes">Calculate Total IBU</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="margin_top">3</property>
-                        <property name="margin_bottom">3</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">29</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkEntry" id="totalIBUOutput">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="tooltip_text" translatable="yes">Gyle To Reserve</property>
-                        <property name="editable">False</property>
-                        <property name="xalign">0.5</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">30</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="margin_top">3</property>
-                        <property name="margin_bottom">17</property>
-                        <property name="label" translatable="yes">Total IBU</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">31</property>
+                        <property name="position">44</property>
                       </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="position">1</property>
-                  </packing>
                 </child>
-                <child type="tab">
-                  <object class="GtkLabel" id="beerTabLabel">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Beer</property>
-                  </object>
-                  <packing>
-                    <property name="position">1</property>
-                    <property name="tab_fill">False</property>
-                  </packing>
-                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="beerTabLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Beer</property>
+          </object>
+          <packing>
+            <property name="position">1</property>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkBox" id="champagneTab">
                     <property name="visible">True</property>
@@ -1607,6 +2189,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_left">350</property>
                             <property name="label" translatable="yes">Imperial</property>
                           </object>
                           <packing>
@@ -1630,6 +2213,7 @@
                           <object class="GtkLabel">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
+                            <property name="margin_right">350</property>
                             <property name="label" translatable="yes">Metric</property>
                           </object>
                           <packing>
@@ -1669,8 +2253,8 @@
                         <property name="receives_default">True</property>
                         <property name="margin_left">13</property>
                         <property name="margin_right">13</property>
-                        <property name="margin_top">7</property>
-                        <property name="margin_bottom">7</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -1698,8 +2282,6 @@
                       <object class="GtkLabel">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="margin_left">13</property>
-                        <property name="margin_right">13</property>
                         <property name="margin_top">3</property>
                         <property name="margin_bottom">17</property>
                         <property name="label" translatable="yes">Amount Of Sugar To Add</property>
@@ -1711,21 +2293,34 @@
                       </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="position">2</property>
-                  </packing>
                 </child>
-                <child type="tab">
-                  <object class="GtkLabel" id="champagneTabLabel">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Champagne</property>
-                  </object>
-                  <packing>
-                    <property name="position">2</property>
-                    <property name="tab_fill">False</property>
-                  </packing>
-                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="champagneTabLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Champagne</property>
+          </object>
+          <packing>
+            <property name="position">2</property>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkBox" id="glossaryTab">
                     <property name="visible">True</property>
@@ -1741,21 +2336,34 @@
                       <placeholder/>
                     </child>
                   </object>
-                  <packing>
-                    <property name="position">3</property>
-                  </packing>
                 </child>
-                <child type="tab">
-                  <object class="GtkLabel" id="infoTabLabel">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Info</property>
-                  </object>
-                  <packing>
-                    <property name="position">3</property>
-                    <property name="tab_fill">False</property>
-                  </packing>
-                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="infoTabLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Info</property>
+          </object>
+          <packing>
+            <property name="position">3</property>
+            <property name="tab_fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="shadow_type">in</property>
+            <child>
+              <object class="GtkViewport">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <child>
                   <object class="GtkBox">
                     <property name="visible">True</property>
@@ -1777,7 +2385,9 @@
                       <object class="GtkLabel" id="versionNumber">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">Version 2.0.1</property>
+                        <property name="margin_top">5</property>
+                        <property name="margin_bottom">5</property>
+                        <property name="label" translatable="yes">Version 3.0.0</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -1816,24 +2426,24 @@
                       </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="position">4</property>
-                  </packing>
-                </child>
-                <child type="tab">
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">About</property>
-                  </object>
-                  <packing>
-                    <property name="position">4</property>
-                    <property name="tab_fill">False</property>
-                  </packing>
                 </child>
               </object>
             </child>
           </object>
+          <packing>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child type="tab">
+          <object class="GtkLabel" id="aboutTabLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">About</property>
+          </object>
+          <packing>
+            <property name="position">4</property>
+            <property name="tab_fill">False</property>
+          </packing>
         </child>
       </object>
     </child>

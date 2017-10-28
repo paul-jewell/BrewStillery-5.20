@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 use gtk;
 use gtk::prelude::*;
 use functions::commonFunctions::*;
@@ -44,7 +42,7 @@ pub fn increaseABVPrep(ref increaseABVBuilderClone: &gtk::Builder) {
     }
 }
 
-pub fn onIncreaseActivate(startingBrix: f32, desiredABV: f32, desiredWortVolume: f32, ref increaseABVBuilderClone: &gtk::Builder) {
+fn onIncreaseActivate(startingBrix: f32, desiredABV: f32, desiredWortVolume: f32, ref increaseABVBuilderClone: &gtk::Builder) {
     let ref increaseABVSwitch: &gtk::Switch = &increaseABVBuilderClone.get_object("increaseABVSwitch").unwrap();
 
     if increaseABVSwitch.get_active() == true {

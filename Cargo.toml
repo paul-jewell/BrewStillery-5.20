@@ -1,6 +1,6 @@
 [package]
 name = "BrewStillery"
-version = "2.0.1"
+version = "3.0.0"
 authors = ["Emily And Meade <thedarkula2049@gmail.com>"]
 description = "BrewStillery is a brewer's, vintner's, and distiller's calculator. It has a multitude of great functions, such as calculating ABV, determining carbonation, and total sparge water needed."
 # documentation to come

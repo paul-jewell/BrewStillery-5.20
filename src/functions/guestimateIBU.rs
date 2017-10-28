@@ -1,5 +1,3 @@
-#![allow(non_snake_case)]
-
 use gtk;
 use gtk::prelude::*;
 use functions::commonFunctions::*;
@@ -75,19 +73,19 @@ pub fn guestimateIBUPrep(ref IBUBuilderClone: &gtk::Builder) {
 
     let totalIBUOutput = String::from("totalIBUOutput");
 
-    if validInput(&totalIBUPreBoilBrixInputBuffer) == 0.0 {
+    if totalIBUPreBoilBrixInputBufferFloat == 0.0 {
         let output: gtk::Entry = IBUBuilderClone.get_object(&totalIBUOutput).unwrap();
         output.set_text("Enter at least the first five inputs");
-    } else if validInput(&totalIBUWortVolumeInputBuffer) == 0.0 {
+    } else if totalIBUWortVolumeInputBufferFloat == 0.0 {
         let output: gtk::Entry = IBUBuilderClone.get_object(&totalIBUOutput).unwrap();
         output.set_text("Enter at least the first five inputs");
-    } else if validInput(&totalIBUBoilTimeInputBuffer) == 0.0 {
+    } else if totalIBUBoilTimeInputBufferFloat == 0.0 {
         let output: gtk::Entry = IBUBuilderClone.get_object(&totalIBUOutput).unwrap();
         output.set_text("Enter at least the first five inputs");
-    } else if validInput(&totalIBUFirstHopAlphaInputBuffer) == 0.0 {
+    } else if totalIBUFirstHopAlphaInputBufferFloat == 0.0 {
         let output: gtk::Entry = IBUBuilderClone.get_object(&totalIBUOutput).unwrap();
         output.set_text("Enter at least the first five inputs");
-    } else if validInput(&totalIBUFirstHopAmountInputBuffer) == 0.0 {
+    } else if totalIBUFirstHopAmountInputBufferFloat == 0.0 {
         let output: gtk::Entry = IBUBuilderClone.get_object(&totalIBUOutput).unwrap();
         output.set_text("Enter at least the first five inputs");
     } else {
@@ -112,7 +110,7 @@ pub fn guestimateIBUPrep(ref IBUBuilderClone: &gtk::Builder) {
         }
     }
 
-pub fn onIBUActivate(totalIBUPreBoilBrixInputBufferFloat: f32, totalIBUWortVolumeInputBufferFloat: f32, totalIBUBoilTimeInputBufferFloat: f32, totalIBUFirstHopAlphaInputBufferFloat: f32, totalIBUFirstHopAmountInputBufferFloat: f32, totalIBUSecondHopAlphaInputBufferFloat: f32, totalIBUSecondHopAmountInputBufferFloat: f32, totalIBUThirdHopAlphaInputBufferFloat: f32, totalIBUThirdHopAmountInputBufferFloat: f32, totalIBUFourthHopAlphaInputBufferFloat: f32, totalIBUFourthHopAmountInputBufferFloat: f32, totalIBUFifthHopAlphaInputBufferFloat: f32, totalIBUFifthHopAmountInputBufferFloat: f32, totalIBUSixthHopAlphaInputBufferFloat: f32, totalIBUSixthHopAmountInputBufferFloat: f32, totalIBUSeventhHopAlphaInputBufferFloat: f32, totalIBUSeventhHopAmountInputBufferFloat: f32, ref IBUBuilderClone: &gtk::Builder) {
+fn onIBUActivate(totalIBUPreBoilBrixInputBufferFloat: f32, totalIBUWortVolumeInputBufferFloat: f32, totalIBUBoilTimeInputBufferFloat: f32, totalIBUFirstHopAlphaInputBufferFloat: f32, totalIBUFirstHopAmountInputBufferFloat: f32, totalIBUSecondHopAlphaInputBufferFloat: f32, totalIBUSecondHopAmountInputBufferFloat: f32, totalIBUThirdHopAlphaInputBufferFloat: f32, totalIBUThirdHopAmountInputBufferFloat: f32, totalIBUFourthHopAlphaInputBufferFloat: f32, totalIBUFourthHopAmountInputBufferFloat: f32, totalIBUFifthHopAlphaInputBufferFloat: f32, totalIBUFifthHopAmountInputBufferFloat: f32, totalIBUSixthHopAlphaInputBufferFloat: f32, totalIBUSixthHopAmountInputBufferFloat: f32, totalIBUSeventhHopAlphaInputBufferFloat: f32, totalIBUSeventhHopAmountInputBufferFloat: f32, ref IBUBuilderClone: &gtk::Builder) {
     let ref totalIBUSwitch: &gtk::Switch = &IBUBuilderClone.get_object("totalIBUSwitch").unwrap();
 
     if totalIBUSwitch.get_active() == true {
