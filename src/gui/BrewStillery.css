@@ -1,0 +1,355 @@
+@keyframes dropletEffect {
+  from {
+    background-image: radial-gradient(circle farthest-corner at center, rgba(136, 170, 0, 0.6) 0%, transparent 0%);
+}
+  50% {
+    background-image: radial-gradient(circle farthest-corner at center, rgba(136, 170, 0, 0.6) 100%, transparent 0%);
+}
+  to {
+    background-image: radial-gradient(circle farthest-corner at center, transparent 100%, transparent 0%);
+} }
+
+* {
+  font-family: roboto;
+  -GtkScrollbar-has-backward-stepper: false;
+  -GtkScrollbar-has-forward-stepper: false;
+}
+
+/* cursor colour */
+@define-color theme_fg_color rgba(215, 215, 215, 1.0);
+/* highlighted text background */
+@define-color theme_selected_bg_color rgba(136, 170, 0, 1.0);
+
+decoration {
+  background: rgba(44, 44, 44, 1.0);
+}
+
+.csd {
+  background: rgba(44, 44, 44, 1.0);
+}
+
+.sectionTitle {
+  color: rgba(136, 170, 0, 1.0);
+  font-weight: bold;
+  font-size: 120%;
+  font-style: italic;
+  font-stretch: expanded;
+}
+
+.entryLabelText {
+  color: rgba(136, 170, 0, 1.0);
+}
+
+.imperialLabelText {
+  color: rgba(136, 170, 0, 1.0);
+}
+
+.metricLabelText {
+  color: rgba(136, 170, 0, 1.0);
+}
+
+.ibuGrid {
+  margin-right: 70px;
+}
+
+/* Entry Section */
+
+entry {
+  color: rgba(215, 215, 215, 1.0);
+  background: rgba(100, 100, 100, 1.0);
+  box-shadow: none;
+  transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+  border-image: radial-gradient(rgba(136, 170, 0, 1.0) 0%, transparent 0%) 0 0 0/0 0 0px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+entry:focus {
+  border-image: radial-gradient(rgba(136, 170, 0, 1.0) 100%, transparent 0%) 0 0 2/0 0 2px;
+}
+
+/* Tooltip Section */
+
+tooltip {
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+tooltip label {
+  color: rgba(215, 215, 215, 1.0);
+  padding: 3px 5px;
+}
+
+tooltip decoration {
+  border-radius: 10px;
+}
+
+tooltip.background {
+  box-shadow: 0 5px 3px rgba(136, 170, 0, 0.16), 0 5px 3px rgba(136, 170, 0, 0.50);
+  background: rgba(64, 64, 64, 1.0);
+}
+
+/* ComboBox Section */
+
+combobox {
+  background: rgba(100, 100, 100, 1.0);
+  border-radius: 4px;
+}
+
+.combo {
+  color: rgba(215, 215, 215, 1.0);
+  background: rgba(100, 100, 100, 1.0);
+}
+
+.combo:hover {
+  background: rgba(68, 85, 0, 1.0);
+  border-radius: 4px;
+}
+
+.combo arrow {
+  color: rgba(136, 170, 0, 1.0);
+}
+
+button.combo {
+  border-radius: 0;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #2EB398 0%, transparent 0%) 0 0 0/0 0 0px;
+  background-color: transparent;
+}
+
+/* Menu/Dropdown Section */
+
+menu {
+  transition: all 0.15s cubic-bezier(0, 0, 0.2, 1);
+  color: rgba(215, 215, 215, 1.0);
+  background: rgba(100, 100, 100, 1.0);
+  border-color: rgba(44, 44, 44, 1.0);
+  border-radius: 4px;
+}
+
+menu menuitem {
+  transition: all 0.15s cubic-bezier(0, 0, 0.2, 1);
+  color: rgba(215, 215, 215, 1.0);
+}
+
+/* Headerbar Section */
+
+headerbar {
+  border-color: rgba(44, 44, 44, 1.0);
+  border-bottom-color: rgba(44, 44, 44, 1.0);
+  background: rgba(44, 44, 44, 1.0);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.fullscreen headerbar,
+.tiled headerbar,
+.maximized headerbar {
+  border-radius: 0;
+}
+
+headerbar .title {
+  text-shadow: none;
+  font-weight: bold;
+  font-size: 140%;
+  font-stretch: extra-expanded;
+  color: rgba(136, 170, 0, 1.0);
+}
+
+headerbar .subtitle {
+  text-shadow: none;
+  font-size: 90%;
+  color: rgba(136, 170, 0, 1.0);
+}
+
+/* Headerbar Button Section */
+
+headerbar button {
+  transition: all 0.15s cubic-bezier(0, 0, 0.2, 1);
+  color: transparent;
+  background-color: transparent;
+  background-image: none;
+}
+
+headerbar button.titlebutton {
+  margin: 0;
+  padding: 0;
+  min-width: 32px;
+  min-height: 28px;
+}
+
+headerbar button.titlebutton {
+  transition: all 0.15s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Close Button Section */
+
+headerbar button.titlebutton.close {
+  background-image: url("/usr/share/BrewStillery/buttons/closeButton.png");
+}
+
+headerbar button.titlebutton.close:hover {
+  background-image: url("/usr/share/BrewStillery/buttons/closeButtonHover.png");
+}
+
+headerbar button.titlebutton.close:active {
+  background-image: url("/usr/share/BrewStillery/buttons/closeButtonActive.png");
+}
+
+
+/* Maximise/Restore Button Section */
+
+headerbar button.titlebutton.maximize {
+  background-image: url("/usr/share/BrewStillery/buttons/maximiseButton.png");
+}
+
+headerbar button.titlebutton.maximize:hover {
+  background-image: url("/usr/share/BrewStillery/buttons/maximiseButtonHover.png");
+}
+
+headerbar button.titlebutton.maximize:active {
+  background-image: url("/usr/share/BrewStillery/buttons/maximiseButtonActive.png");
+}
+
+.fullscreen headerbar button.titlebutton.maximize,
+.tiled headerbar button.titlebutton.maximize,
+.maximized headerbar button.titlebutton.maximize {
+  background-image: url("/usr/share/BrewStillery/buttons/restoreButton.png");
+}
+
+.fullscreen headerbar button.titlebutton.maximize:hover,
+.tiled headerbar button.titlebutton.maximize:hover,
+.maximized headerbar button.titlebutton.maximize:hover {
+  background-image: url("/usr/share/BrewStillery/buttons/restoreButtonHover.png");
+}
+
+.fullscreen headerbar button.titlebutton.maximize:active,
+.tiled headerbar button.titlebutton.maximize:active,
+.maximized headerbar button.titlebutton.maximize:active {
+  background-image: url("/usr/share/BrewStillery/buttons/restoreButtonActive.png");
+}
+
+/* Minimise Button Section */
+
+headerbar button.titlebutton.minimize {
+  background-image: url("/usr/share/BrewStillery/buttons/min button.png");
+}
+
+headerbar button.titlebutton.minimize:hover {
+  background-image: url("/usr/share/BrewStillery/buttons/min hover button.png");
+}
+
+headerbar button.titlebutton.minimize:active {
+  background-image: url("/usr/share/BrewStillery/buttons/min active button.png");
+}
+
+/* Notebook Section */
+
+notebook {
+  background-color: rgba(44, 44, 44, 1.0);
+  border-color: rgba(44, 44, 44, 1.0);
+}
+
+tabs {
+  background-color: rgba(44, 44, 44, 1.0);
+}
+
+tab {
+  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgba(83, 83, 83, 1.0);
+  border-color: rgba(44, 44, 44, 1.0);
+}
+
+.tabLabel {
+  color: rgba(136, 170, 0, 1.0);
+  font-weight: bold;
+}
+
+tab:hover:not(:checked) {
+  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  background: rgba(68, 85, 0, 1.0);
+}
+
+tab:checked {
+  animation: dropletEffect 0.75s cubic-bezier(0, 0, 0.2, 1);
+  background: rgba(30, 30, 30, 1.0);
+}
+
+/* Scrollbar Section */
+
+scrolledwindow {
+  border-color: rgba(44, 44, 44, 1.0);
+  border-top-color: rgba(44, 44, 44, 1.0);
+}
+
+.vertical, .right {
+  background: rgba(44, 44, 44, 1.0);
+  border: none;
+}
+
+scrollbar slider {
+  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  background: rgba(136, 170, 0, 1.0);
+  border: none;
+  min-width: 13px;
+}
+
+scrollbar trough {
+  border: none;
+  border-radius: 10px;
+  background: rgba(44, 44, 44, 1.0);
+  min-width: 13px;
+}
+
+scrollbar slider:hover {
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  background: rgba(68, 85, 0, 1.0);
+}
+
+scrollbar:hover:not(:active):not(.vertical):not(.right) {
+  background: rgba(68, 85, 0, 1.0);
+}
+
+scrollbar slider:active {
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  background: rgba(100, 100, 100, 1.0);
+}
+
+/* Switch Section */
+
+switch {
+  background-image: none;
+}
+
+slider {
+  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  background-color: rgba(136, 170, 0, 1.0);
+  border-radius: 100px;
+  box-shadow: 0 7px 3px rgba(0, 0, 0, 0.16), 0 7px 3px rgba(0, 0, 0, 0.50);
+}
+
+switch:hover slider {
+  transition: all 0.5s cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 3px rgba(255, 255, 255, 0.16), 0 3px 3px rgba(255, 255, 255, 0.50);
+}
+
+
+/* ColorButon Section */
+
+.color, colorswatch {
+background: transparent;
+border: none;
+}
+
+
+/* Link Section */
+
+.link {
+  color: rgba(136, 170, 0, 1.0);
+}
+
+.link:hover {
+  color: rgba(68, 85, 0, 1.0);
+}

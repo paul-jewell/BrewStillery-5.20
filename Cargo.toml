@@ -1,7 +1,7 @@
 [package]
 name = "BrewStillery"
-version = "3.0.0"
-authors = ["Emily And Meade <thedarkula2049@gmail.com>"]
+version = "5.0.0"
+authors = ["Meade <thedarkula2049@gmail.com>", "Emily <marleybrush5@gmail.com>"]
 description = "BrewStillery is a brewer's, vintner's, and distiller's calculator. It has a multitude of great functions, such as calculating ABV, determining carbonation, and total sparge water needed."
 # documentation to come
 # documentation = "..."
@@ -11,21 +11,27 @@ readme = "README.md"
 keywords = ["beer", "wine", "champagne", "distilling", "calculator"]
 categories = ["science", "gui"]
 license = "AGPL-3.0"
-exclude = ["media/screenshots/*", "Arch/*"]
+exclude = ["Arch/*"]
 
 [badges]
 maintenance = { status = "actively-developed" }
 
 [dependencies]
+gdk = "0.7.0"
+gio = "0.3.0"
+clippy = {version = "*", optional = true}
+
+[features]
+default = []
 
 [dependencies.gtk]
-version = "0.2.0"
+version = "0.3.0"
 features = ["v3_22"]
 
 [profile.dev]
-codegen-units = 4
+codegen-units = 16
 
 [profile.release]
 opt-level = 3
-codegen-units = 4
+codegen-units = 16
 lto = true

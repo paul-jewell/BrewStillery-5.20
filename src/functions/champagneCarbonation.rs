@@ -2,40 +2,36 @@ use gtk;
 use gtk::prelude::*;
 use functions::commonFunctions::*;
 
-pub fn champagneCarbonationPrep(ref champagneCarbonationBuilderClone: &gtk::Builder) {
-    let champagneCarbonationInput: &gtk::Entry = &champagneCarbonationBuilderClone.get_object("champagneCarbonationInput").unwrap();
+pub fn champagneCarbonationPrep(champagneCarbonationBuilderClone: &gtk::Builder) {
+    let champagneCarbonationInput: gtk::Entry = champagneCarbonationBuilderClone.get_object("champagneCarbonationInput").unwrap();
     let champagneCarbonationInputBuffer = champagneCarbonationInput.get_text().expect("No input");
     let champagneVolume = validInput(&champagneCarbonationInputBuffer);
 
-    let champagneCarbonationOutput = String::from("champagneCarbonationOutput");
+    let champagneCarbonationOutput: gtk::Entry = champagneCarbonationBuilderClone.get_object("champagneCarbonationOutput").unwrap();
 
     if champagneVolume == 0.0 {
-        let output: gtk::Entry = champagneCarbonationBuilderClone.get_object(&champagneCarbonationOutput).unwrap();
-        output.set_text("Enter a number");
+        champagneCarbonationOutput.set_text("Enter a number");
+    } else if champagneVolume <= 0.0 {
+        champagneCarbonationOutput.set_text("Enter a positive number");
     } else {
-        if champagneVolume <= 0.0 {
-            let output: gtk::Entry = champagneCarbonationBuilderClone.get_object(&champagneCarbonationOutput).unwrap();
-            output.set_text("Enter a positive number");
-        } else {
-            onChampagneActivate(champagneVolume, &champagneCarbonationBuilderClone);
-        }
+        onChampagneActivate(champagneVolume, champagneCarbonationBuilderClone);
     }
 }
 
-fn onChampagneActivate(champagneVolume: f32, ref champagneCarbonationBuilderClone: &gtk::Builder) {
-    let ref champagneCarbonationSwitch: &gtk::Switch = &champagneCarbonationBuilderClone.get_object("champagneCarbonationSwitch").unwrap();
+fn onChampagneActivate(champagneVolume: f64, champagneCarbonationBuilderClone: &gtk::Builder) {
+    let champagneCarbonationSwitch: gtk::Switch = champagneCarbonationBuilderClone.get_object("champagneCarbonationSwitch").unwrap();
 
     if champagneCarbonationSwitch.get_active() == true {
-        let imperialOrMetric = String::from("metric");
-        champagneCarbonationMaths(champagneVolume, imperialOrMetric, &champagneCarbonationBuilderClone);
+        let imperialOrMetric = "metric";
+        champagneCarbonationMaths(champagneVolume, imperialOrMetric, champagneCarbonationBuilderClone);
     } else if champagneCarbonationSwitch.get_active() == false {
-        let imperialOrMetric = String::from("imperial");
-        champagneCarbonationMaths(champagneVolume, imperialOrMetric, &champagneCarbonationBuilderClone);
+        let imperialOrMetric = "imperial";
+        champagneCarbonationMaths(champagneVolume, imperialOrMetric, champagneCarbonationBuilderClone);
     }
 }
 
-fn champagneCarbonationMaths(champagneVolume: f32, imperialOrMetric: String, ref champagneCarbonationBuilderClone: &gtk::Builder) {
-    let ref champagneCarbonationOutput: &gtk::Entry = &champagneCarbonationBuilderClone.get_object("champagneCarbonationOutput").unwrap();
+fn champagneCarbonationMaths(champagneVolume: f64, imperialOrMetric: &str, champagneCarbonationBuilderClone: &gtk::Builder) {
+    let champagneCarbonationOutput: gtk::Entry = champagneCarbonationBuilderClone.get_object("champagneCarbonationOutput").unwrap();
 
     if imperialOrMetric == "imperial" {
         let totalSugar = champagneVolume * 0.2;
