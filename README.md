@@ -18,23 +18,26 @@ Written in Rust, using GTK3
         * We now have a dropdown menu where you can pick your glassware and it will show you the appropriate colour in that glass.
   * Switched from an entry/button setup to a dynamic one: everything is calculated on the fly.
   * Refactored our ABV functions. It's now based off of one source, which is very accurate.
-  * Changed from using 32 bit floating point to 64 bit
+  * Changed from using 32 bit floating point to 64 bit.
 
 
 ## Screenshots:
 ![General Tab Screenshot](media/screenshots/BrewStilleryGeneralTab.png)
 
-![Beer Top Tab Screenshot](media/screenshots/BrewStilleryBeerTopTab.png)
+![General Tab Filled In Screenshot](media/screenshots/BrewStilleryGeneralTabFilledIn.png)
 
-![Beer Bottom Tab Screenshot](media/screenshots/BrewStilleryBeerBottomTab.png)
+![Beer Tab Top Screenshot](media/screenshots/BrewStilleryBeerTabTop.png)
+
+![Beer Tab Top Filled In Screenshot](media/screenshots/BrewStilleryBeerTabTopFilledIn.png)
+
+![Beer Tab Bottom Screenshot](media/screenshots/BrewStilleryBeerTabBottom.png)
 
 ![Champagne Tab Screenshot](media/screenshots/BrewStilleryChampagneTab.png)
 
-![About Tab Screenshot](media/screenshots/BrewStilleryABoutTab.png)
+![About Tab Screenshot](media/screenshots/BrewStilleryAboutTab.png)
 
 
 ## To Do:
-  * Update Screenshots
   * Add Documentation To The Info Tab
   * Add Sugars And Fruits To ABV From Grain
   * Add Water Minerals Calculator
