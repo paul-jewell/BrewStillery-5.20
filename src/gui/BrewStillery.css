@@ -232,15 +232,15 @@ headerbar button.titlebutton.maximize:active {
 /* Minimise Button Section */
 
 headerbar button.titlebutton.minimize {
-  background-image: url("/usr/share/BrewStillery/buttons/min button.png");
+  background-image: url("/usr/share/BrewStillery/buttons/minimiseButton.png");
 }
 
 headerbar button.titlebutton.minimize:hover {
-  background-image: url("/usr/share/BrewStillery/buttons/min hover button.png");
+  background-image: url("/usr/share/BrewStillery/buttons/minimiseButtonHover.png");
 }
 
 headerbar button.titlebutton.minimize:active {
-  background-image: url("/usr/share/BrewStillery/buttons/min active button.png");
+  background-image: url("/usr/share/BrewStillery/buttons/minimiseButtonActive.png");
 }
 
 /* Notebook Section */

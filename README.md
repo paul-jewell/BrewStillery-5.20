@@ -18,6 +18,7 @@ Written in Rust, using GTK3
         * We now have a dropdown menu where you can pick your glassware and it will show you the appropriate colour in that glass.
   * Switched from an entry/button setup to a dynamic one: everything is calculated on the fly.
   * Refactored our ABV functions. It's now based off of one source, which is very accurate.
+  * Changed from using 32 bit floating point to 64 bit
 
 
 ## Screenshots:
